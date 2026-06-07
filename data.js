@@ -3,7 +3,7 @@ const DAYS = [
   { id:1, date:"6/14", dow:"日", region:"lucerne", weather:false,
     location:"台灣 → 蘇黎世 → 琉森", short:"琉森",
     summary:"07:10 飛抵 ZRH 機場，蘇黎世短暫停留，下午抵達琉森",
-    duration:"約 9 小時", stay:"琉森（第 1 晚）", stayNote:"週一下午 16:00 check in",
+    duration:"約 9 小時", stay:"琉森（第 1 晚）", stayNote:"下午check in",
     schedule:[
       {t:"07:10",    a:"飛抵 ZRH 機場，出關領行李"},
       {t:"09:00",    a:"搭車前往 Zürich HB，蘇黎世市區散步"},
@@ -23,6 +23,7 @@ const DAYS = [
       {t:"17:00",    a:"Chapel Bridge", link:"https://maps.app.goo.gl/fDhX4ySEGuCPpFWJA",suf:" 卡貝爾教堂橋", spot:"chapel_bridge"},
       {t:"17:00",    a:"Jesuitenkirche Luzern", link:"https://maps.app.goo.gl/C4XDzHrGWjMtzPsD6",suf:" 耶穌會教堂", spot:"Jesuitenkirche"},
       {t:"18:00",    a:"飯店check in"},
+      {t:"18:40",    a:"琉森碼頭 Pier 2", link:"https://maps.app.goo.gl/DDCmsGPiVZVSCbHVA",suf:"查看隔天船班次"},
       {t:"18:40",    a:"Coop Supermarkt Luzern Bahnhof", link:"https://maps.app.goo.gl/m74MWcBARTYWNk4f6",suf:"採買晚餐"},
       {t:"19:30 後", a:"返回飯店休息"},
     ],
@@ -35,12 +36,15 @@ const DAYS = [
     summary:"搭船 + 齒軌火車登皮拉圖斯山，體驗騎龍纜車",
     duration:"約 8 小時", stay:"琉森（第 2 晚）",
     schedule:[
-      {t:"08:38", a:"琉森碼頭 Pier 2 搭船出發"},
-      {t:"",      a:"抵 Alpnachstad（約 50–90 分鐘），轉搭齒軌火車上山（坐左邊）"},
-      {t:"",      a:"Pilatus Kulm 山頂 · Dragon Path 龍之小徑", spot:"pilatus_kulm"},
-      {t:"",      a:"搭大型纜車下山至 Kriens，轉公車（1/5 號）回琉森市區"},
+      {t:"08:38", a:"琉森Pier 2  E2號碼頭", link:"https://maps.app.goo.gl/DDCmsGPiVZVSCbHVA",suf:"08:38搭船"},
+      {t:"",      pre:"抵 Alpnachstad（約 50–90 分鐘），轉搭",a:"Alpnachstad PB齒軌火車上山（坐左邊）", link:"https://maps.app.goo.gl/R8JVXbjYYqvaWzbN7"},
+      {t:"",      pre:"搭乘坡度高達 48% 的",a:"Cogwheel railway 齒軌火車", spot:"Cogwheel"},
+      {t:"",      pre:"抵達Pilatus Kulm 山頂，前往 ",a:"Dragon Path 龍之小徑",suf:"，直達Oberhaupt 奧伯霍普特峰瞭望台", link:"https://maps.app.goo.gl/zUHkMCFKhFaSkUbz5", spot:"Dragon_Path"},
+      {t:"12:00",   pre:"健行30至40分鐘至",a:"Flower trail to Tomlishorn 高山花卉小徑(整修中)", link:"https://pilatus.ch/en/live/disturbances#c86914", suf:"，尋找瑞士國花「雪絨花」"},
+      {t:"12:00",   pre:"搭乘Dragon Ride前往Fräkmüntegg體驗",a:"Fräkigaudi toboggan run 夏季雪橇滑道(僅在晴天開放)", link:"https://pilatus.ch/en/activities/toboggan", spot:"toboggan"},
+      {t:"12:00",      pre:"回程搭Dragon Ride全景大纜車到Kriens 站，'搭乘1號或5號公車、或火車回琉森"},
     ],
-    tips:"Swiss Travel Pass：大型纜車、火車、公車免費；山頂齒軌火車需另購。",
+    tips:"Swiss Travel Pass：持有 Swiss travel pass 者，搭乘大眾渡輪、火車、公車免費，「半價」加購上下山的齒軌列車及纜車",
     links:[
       {label:"行程部落格參考", url:"https://www.wendyjourney.com/pilatus/"},
       {label:"皮拉圖斯官網地圖", url:"https://pilatus.ch/en/map"},
@@ -53,11 +57,12 @@ const DAYS = [
     duration:"約 8.5 小時", stay:"琉森（第 3 晚）",
     schedule:[
       {t:"",a:"搭火車琉森 → 伯恩（約 1 小時）"},
-      {t:"",a:"聯邦宮 Bundeshaus & Bundesplatz", spot:"bundeshaus"},
-      {t:"",a:"牢籠塔 Käfigturm → 時鐘塔 Zytglogge（整點機械表演）", spot:"zytglogge"},
-      {t:"",a:"愛因斯坦故居展 Einsteinhaus Bern"},
-      {t:"",a:"伯恩大教堂 Berner Münster", spot:"berner_munster"},
-      {t:"",a:"熊苑 BärenPark（免費）→ 玫瑰園 Rosengarten", spot:"barenpark"},
+      {t:"",a:"聯邦宮 Bundeshaus & Bundesplatz",link:"https://maps.app.goo.gl/jbJ8BdYDs4gCBhgV9", spot:"bundeshaus"},
+      {t:"",a:"牢籠塔 Käfigturm",link:"https://maps.app.goo.gl/LK7LRqNb4WJJfQyu7", spot:"Kafigturm"},
+      {t:"",a:"時鐘塔 Zytglogge（整點機械表演）",link:"https://maps.app.goo.gl/rRYp525efWAjNBx76", spot:"zytglogge"},
+      {t:"",a:"愛因斯坦故居展 Einsteinhaus Bern",link:"https://maps.app.goo.gl/GHW453t5AtF5VaWQA", spot:"Einsteinhaus"},
+      {t:"",a:"伯恩大教堂 Berner Münster",link:"https://maps.app.goo.gl/A9ZEVq3pirDsCQ4h9", spot:"berner_munster"},
+      {t:"",a:"熊苑 BärenPark（免費）",link:"https://maps.app.goo.gl/3RmYJimmPxJw32Ae8",suf:"看熊(免費廁所) → 玫瑰園 Rosengarten", spot:"barenpark"},
       {t:"",a:"採買食材，傍晚返回琉森"},
     ],
     tips:"Kornhauskeller 餐廳需訂位，週一至週五 11:30–14:00 及 17:30–22:00。",
@@ -417,48 +422,179 @@ const SPOT_DATA = {
     info:  "免費參觀 · 全天開放",
   },
   /* ── 皮拉圖斯山 ── */
-  pilatus_kulm: {
-    name:  "皮拉圖斯山頂 Pilatus Kulm",
+  Cogwheel: {
+    name:  "Pilatus Cogwheel railway 皮拉圖斯山齒軌鐵路",
     emoji: "⛰️",
-    img:   "./images/pilatus_kulm.jpg",
-    desc:  "海拔 2,132 公尺，琉森近郊最壯觀的山峰，山頂可俯瞰琉森湖及阿爾卑斯山全景。搭乘世界坡度最陡的齒軌鐵路（最大坡度 48%）抵達，終年吸引大批旅客。",
+    img:   "./images/Cogwheel.jpg",
+    desc:   `<h3>1. 歷史背景</h3>
+    <ul>
+        <li><span class="highlight">全球最陡峭的工程奇蹟：</span>這條鐵道於 1889 年正式通車，橫跨超過一個世紀，至今依然保持著「全球最陡峭齒軌鐵路」的世界紀錄。</li>
+        <li><span class="highlight">突破地心引力的挑戰</span>：在 19 世紀末，要讓列車爬上如此陡峭的山體被普遍認為是不可能的。瑞士工程師愛德華·洛赫（Eduard Locher）為此發明了獨一無二的「洛赫專利齒軌系統（Locher System）」，利用兩組水平旋轉的齒輪緊緊咬合鐵軌，才成功征服了這座魔山，並在 1937 年完成了電氣化升級。</li>
+    </ul>
+    <h3>2. 核心看點：最大坡度 48% 的感官震撼</h3>
+    <ul>
+        <li><span class="highlight">48% 最大坡度：</span>鐵路全長約 4.6 公里，從起點阿爾卑納赫施塔德（Alpnachstad）出發，在短短 30 分鐘內就要垂直攀升 1,635 公尺。列車最陡峭的路段坡度高達 $48\%$（相當於每前進 100 公尺就上升 48 公尺），車廂內部甚至特別設計成階梯式，讓乘客在極度傾斜的車體中依然能坐得穩妥。</li>
+         <li><span class="highlight">紅色經典與全景車廂：</span>歷史悠久的紅色小火車在陡峭的岩壁、高山草甸與狹窄的隧道間穿梭。近年更新建了擁有大面積玻璃窗的現代化全景車廂，讓人在攀升過程中擁有毫無遮蔽的極致視野。</li>
+    </ul>
+    <h3>3. 環境與漫步體驗</h3>
+    <ul>
+        <li><span class="highlight">經典「金色環遊」的震撼壓軸</span>這裡通常與琉森湖遊船、皮拉圖斯山空中纜車結合成著名的「金色環遊（Golden Round Trip）」路線。當小火車緩緩駛出阿爾卑納赫施塔德車站，腳下藍色的琉森湖會迅速縮小，取而代之的是阿爾卑斯山脈的巍峨巨岩，沿途甚至能看見高山土撥鼠的蹤跡。</li>
+        <li><span class="highlight">登頂後的雲海漫步</span>當小火車抵達終點皮拉圖斯庫姆（Pilatus Kulm，海拔 2,132 公尺）時，迎接你的是 360 度的阿爾卑斯峰巒與如同仙境般的雲海。坐在山頂景觀台的露天座位，看著下一班紅色火車頂著藍天白雲、貼著陡峭山壁緩緩爬升，這幅畫面將成為瑞士之旅中最震撼的視覺記憶。</li>
+    </ul>`,
     info:  "纜車來回約 CHF 72–90 · 建議提前訂票",
   },
-  dragon_path: {
-    name:  "龍之小徑 Dragon Path",
+  Dragon_Path: {
+    name:  "Dragon Path 龍之小徑",
     emoji: "🐉",
-    img:   "./images/pilatus_kulm.jpg",
-    desc:  "皮拉圖斯山上充滿傳說的健行步道，相傳中世紀曾有巨龍棲居於此。沿途設有十座造型生動的龍雕塑，結合壯麗山景，全程約 1 小時，連接山頂與纜車站。",
-    info:  "免費步行（需購纜車票）",
+    img:   "./images/Dragon_Path.webp",
+    desc:   `<h3>1. 歷史背景</h3>
+    <ul>
+        <li><span class="highlight">中世紀的惡魔與飛龍傳說：</span>中世紀的琉森，巍峨的皮拉圖斯山（Mt. Pilatus）被市民視為神祕而恐怖的禁地。當時民間瘋傳山頂的巨石與洞穴中隱居著擁有療癒神力、卻也令人敬畏的飛龍，甚至傳說羅馬總督本丟·彼拉多（Pontius Pilate）的靈魂也困在此地的山中湖泊，因此當時政府曾嚴令禁止市民登頂。</li>
+        <li><span class="highlight">從恐懼到奇幻步道</span>：隨著時代變遷，這些帶有神祕色彩的飛龍傳說非但沒有消失，反而成為皮拉圖斯山最著名的文化符號。瑞士旅遊局與地質專家特別依山興建了這條「龍之小徑」，將中世紀的奇幻傳說實體化，讓現代旅人能安全地探索當年的神祕禁地。</li>
+    </ul>
+    <h3>2. 核心看點：龍雕塑群與 360 度山頂全景</h3>
+    <ul>
+        <li><span class="highlight">鑿穿岩壁的探險隧道：</span>龍之小徑是一條直接在皮拉圖斯山頂外圍、陡峭天然岩壁上人工鑿穿而成的半開放式迴廊與隧道。走在其中，一側是堅硬的阿爾卑斯山岩，另一側則是鏤空的岩石窗口，充滿探險的視覺張力。</li>
+         <li><span class="highlight">漢斯·艾爾尼的龍族壁畫：</span>漫步在昏暗的岩石隧道中，牆面上裝飾著由琉森在地知名藝術家漢斯·艾爾尼（Hans Erni）所創作的飛龍壁畫。透過生動的線條與多媒體光影，訴說著中世紀飛龍救助受傷村民、或在暴風雨中翱翔的高山神話，營造出魔幻的沉浸式氛圍。</li>
+    </ul>
+    <h3>3. 環境與漫步體驗</h3>
+    <ul>
+        <li><span class="highlight">驚心動魄的懸崖全景視角：</span>步道整體平緩好走，起點位於皮拉圖斯山頂車站（Pilatus Kulm）旁。當你探頭望向岩石窗口，腳下便是垂直落差數百公尺的深谷，天氣晴朗時，可以俯瞰一望無際的琉森湖全景與多個瑞士內陸湖泊，視野極度震撼。</li>
+        <li><span class="highlight">雲霧繚繞的魔幻漫步</span>這裡最迷人的漫步體驗在於氣候的瞬息萬變。有時山頂雲霧繚繞，白茫茫的濃霧從岩孔湧入隧道，旅人彷彿真的走進了神話中飛龍吐出的迷霧世界；而當微風吹散雲海，露出的巍峨群山與藍天，將為這趟奇幻的傳說漫步帶來最完美的驚嘆號。</li>
+    </ul>`,
+    info:  "免費步行",
   },
-
+  toboggan: {
+    name:  "Fräkigaudi Toboggan Run 夏季雪橇滑道",
+    emoji: "🐉",
+    img:   "./images/Toboggan.avif",
+    desc:   `<h3>1. 歷史背景</h3>
+    <ul>
+        <li><span class="highlight">瑞士最長的旱地雪橇：</span>位於皮拉圖斯山腰的弗萊克穆恩特（Fräkmüntegg，海拔 1,415 公尺）。這條滑道全長達 1,350 公尺，自營運以來便榮登瑞士全國最長的夏季旱地雪橇滑道（Sommerrodelbahn）紀錄保持者。</li>
+        <li><span class="highlight">速度與重力的百年魅力</span>：這種利用重力向下疾馳的遊樂設施源自阿爾卑斯山區冬天的雪橇傳統。瑞士工程師將其改良為不受季節限制的不鏽鋼滑槽，讓旅人在沒有雪的季節，也能在絕對安全的防護下，體驗貼地飛行的極速快感。</li>
+    </ul>
+    <h3>2. 核心看點：1,350公尺的極速鋼軌與陡峭彎道</h3>
+    <ul>
+        <li><span class="highlight">不鏽鋼與重力的完美結合：</span>整個滑道是由閃閃發亮的不鏽鋼槽體順著山坡打造而成。乘客一人一車（亦可兩人共乘），完全透過座位中間的手動煞車拉桿來控制速度。拉桿往前推就是加速前進，往後拉則是減速，速度快慢完全由自己掌握。</li>
+         <li><span class="highlight">驚險刺激的瘋狂彎道：</span>1,350 公尺的滑行過程中，包含了無數個急轉彎道（Steep Curves）、波浪形起伏路段，甚至還會穿過數個黑漆漆的地下隧道，為追求速度感的旅人帶來腎上腺素飆升的感官震撼。</li>
+    </ul>
+    <h3>3. 環境與漫步體驗</h3>
+    <ul>
+        <li><span class="highlight">隱身於黑森林間的疾馳：</span>弗萊克高迪滑道就座落在翠綠的高山草甸與茂密的阿爾卑斯針葉林之間。當你駕著雪橇疾馳而下時，兩旁的松樹綠蔭與高山風光會像電影畫面般快速向後飛逝，空氣中瀰漫著濃濃的芬多精與草香。</li>
+        <li><span class="highlight">輕鬆回程的無重力漫步</span>體驗完驚心動魄的急速下坡、抵達滑道終點後，你完全不需要自己辛苦爬回山上。現場設有自動索道拖曳系統，會直接連人帶車將你緩緩拉回起點。</li>
+    </ul>`,
+    info:  "免費步行",
+  },
   /* ── 伯恩 ── */
   bundeshaus: {
-    name:  "聯邦宮 Bundeshaus",
+    name:  "Bundeshaus 聯邦宮",
     emoji: "🏛️",
     img:   "./images/bundeshaus.jpg",
-    desc:  "瑞士聯邦政府所在地，完工於 1902 年，融合文藝復興與巴洛克建築風格。建築正面俯瞰阿勒河峽谷，廣場上設有噴水池。議會休會期間提供免費導覽，深入了解瑞士民主制度。",
+    desc:   `<h3>1. 歷史背景</h3>
+    <ul>
+        <li><span class="highlight">瑞士最高權力核心：</span>位於瑞士首都伯恩（Bern），這座宏偉的建築是瑞士聯邦政府與聯邦議會（兩院）的所在地。自 1848 年伯恩被選為聯邦城市後，這裡便逐漸成為瑞士民主制度的最高殿堂。</li>
+        <li><span class="highlight">跨世紀的建築傑作</span>：聯邦宮由建築師漢斯·奧爾（Hans Auer）設計，分為西翼、東翼和中央大樓，於 1902 年全面完工。在建造過程中，全瑞士 26 個州拿出了超過 30 種不同的名貴石材，數百名本土藝術家共同參與，是一座象徵瑞士國家團結與主權的紀念碑。</li>
+    </ul>
+    <h3>2. 核心看點：文藝復興式綠色巨頂與彩色玻璃徽章</h3>
+    <ul>
+        <li><span class="highlight">極具氣勢的文藝復興風格：</span>建築外觀採用對稱的佛羅倫斯文藝復興風格，最醒目的標誌就是高達 64 公尺的青綠色巨型穹頂。巨頂下方雕刻著象徵正義、智慧與團結的青銅雕像。</li>
+         <li><span class="highlight">神聖的中央大廳：</span>走進宮殿內部，巨大的穹頂下是一座莊嚴的中央大廳。天花板上鑲嵌著極其精美的彩色玻璃窗，上面描繪著瑞士最初 22 個州的盾形徽章，並由四位手持武器的古代瑞士士兵雕像守護著，呈現出神聖且古典的藝術張力。</li>
+    </ul>
+    <h3>3. 環境與漫步體驗</h3>
+    <ul>
+        <li><span class="highlight">親民且無圍牆的民主殿堂：</span>聯邦宮最令人驚嘆的，是它完全沒有圍欄或高牆護衛。平日裡，廣場上會舉辦熱鬧的早市（週二與週六）、音樂會或露天滑冰場；瑞士的政府官員也常和普通市民一樣，神色自若地步行穿過廣場去上班，展現了瑞士獨特且高度親民的民主文化。</li>
+    </ul>`,
     info:  "免費導覽（議會休會期間）· 廣場全天開放",
   },
+  Kafigturm: {
+    name:  "Käfigturm 獄塔",
+    emoji: "🕰️",
+    img:   "./images/Kafigturm.webp",
+    desc:  `<h3>1. 歷史背景</h3>
+    <ul>
+        <li><span class="highlight">中世紀的黑牢：</span>17、18 世紀，這座高聳的石塔可不是現在這樣充滿浪漫氣息。當時塔內隔出了無數個陰暗狹小的木製牢籠（Cages），關滿了等待審判的囚犯。牆上甚至還留有昔日嚴刑拷問的痕跡。</li>
+        <li><span class="highlight">自由空間</span>：如今它洗去陰森，內部完全改建。現在這裡叫做 Polit-Forum Bern，是一個免費開放的政治論壇空間，裡面經常舉辦關於民主、言論自由與人權的展覽，從最封閉的監獄變成最開放的民主殿堂。</li>
+    </ul>
+    <h3>2. 核心看點：堅固的防禦美學與「榮譽之鐘」</h3>
+    <ul>
+        <li><span class="highlight">堅不可摧的石砌外觀：</span>塔樓高約 49 公尺，外牆由巨大的灰色石灰岩方磚砌成，窗戶狹小且裝有鐵柵欄，展現出中世紀與巴洛克交界時期沉穩、威嚴且具備高度防禦機能的結構美學。</li>
+         <li><span class="highlight">塔頂的榮譽之鐘：</span>塔樓頂部的開放式小鐘亭內，懸掛著一口鑄造於 1643 年的巨鐘。在過去，這口鐘被稱為「榮譽之鐘」或「暴風鐘」，只有在城市遭遇火災、外敵入侵，或是即將執行重大死刑時才會被敲響。</li>
+    </ul>
+    <h3>3. 環境與漫步體驗</h3>
+    <ul>
+        <li><span class="highlight">老城動脈的黃金交界：</span>監獄塔座落在伯恩舊城區最熱鬧的市場街（Marktgasse）與孤兒院廣場（Waisenhausplatz）的交界處，距離著名的時鐘塔（Zytglogge）步行只需約 3 分鐘。</li>
+        <li><span class="highlight">中世紀拱廊下的市集日常：</span>漫步到監獄塔下，您可以穿過中世紀留下來的寬闊石拱門，看著現代的紅色輕軌電車從腳下悠然穿梭。廣場周邊每逢週二、週六還會擺起熱鬧的露天市集，販售新鮮花卉、當地起司與手工藝品。這座曾經禁錮靈魂的冰冷鐵塔，如今已被喧囂溫暖的伯恩日常生活與浪漫的兩側拱廊（Lauben）完全環抱。</li>
+    </ul>`,
+    info:  "免費",
+  },
   zytglogge: {
-    name:  "時鐘塔 Zytglogge",
+    name:  "Zytglogge 時鐘塔",
     emoji: "🕰️",
     img:   "./images/zytglogge.jpg",
-    desc:  "建於 13 世紀初，伯恩最著名的地標。塔上天文鐘每逢整點前 4 分鐘啟動精緻機械人偶表演。愛因斯坦據說在此得到相對論的靈感，是不可錯過的歷史景點。",
+    desc:  `<h3>1. 歷史背景</h3>
+    <ul>
+        <li><span class="highlight">老城區的最古老門戶：</span>始建於 1218 年至 1220 年間，這座高聳的塔樓最初是伯恩西側的城市主城門。隨著城市不斷向外擴建，它逐漸失去了防禦功能，轉而變成了女子監獄。</li>
+        <li><span class="highlight">浴火重生</span>：1405 年，伯恩遭遇了一場毀滅性的城市大火，塔樓被嚴重燒毀。重建後，它被正式改建為一座時鐘塔（Zytglogge 在伯恩德語中意指「時間鐘」）。數百年來，它一直是伯恩老城區的心臟與時間的主宰，也是愛因斯坦在伯恩構思出《相對論》時天天駐足思索的靈感來源。</li>
+    </ul>
+    <h3>2. 核心看點：16 世紀的天文鐘與報時玩偶</h3>
+    <ul>
+        <li><span class="highlight">極其精密的巴洛克天文鐘：</span>塔樓東面（面向雜貨街）最醒目的就是這座打造於 1530 年的大型天文鐘（Astronomical Clock）。它不只能看時間，還擁有複雜的齒輪運作，能準確顯示當前的月份、日期、星期、星座、太陽位置甚至是月相盈虧。</li>
+         <li><span class="highlight">整點報時的機械木偶秀：</span>每到整點前約 4 分鐘（例如 11:56），時鐘塔旁就會聚滿仰頭期待的遊客。此時，一旁的機械木偶開始連動運作：公雞先啼叫拍翅，接著一圈黑熊（伯恩的象徵）開始繞圈巡遊，隨後小丑會敲鐘、老者（時間之神克洛諾斯）會翻轉沙漏並張開嘴巴，最後塔頂的金色漢斯（Hans von Thann）會親自敲響大鐘。</li>
+         <li><span class="highlight">保存至今的 500 年手工發條：</span>塔樓內部的機械結構自 16 世紀起就幾乎沒有更換過。至今每天都必須由專職的守鐘人親自爬上狹窄的階梯，手動為沉重的鐵鑄發條上緊發條，以維持這座古老奇蹟的精準運作。</li>
+    </ul>
+    <h3>3. 環境與漫步體驗</h3>
+    <ul>
+        <li><span class="highlight">老城區的靈魂中繼站：</span>時鐘塔座落在伯恩老城區的正中央，連接著正前方的雜貨街（Kramgasse）與後方的市場街（Marktgasse）。漫步至此，您可以站在鋪滿鵝卵石的古老街道上，一邊欣賞四周保留完好的中世紀拱廊（Lauben），一邊等待古典的紅色路面電車（Tram）從時鐘塔下的拱門悠然穿過，那畫面彷彿讓人瞬間跌進了中世紀的歐洲時空。</li>
+    </ul>`,
     info:  "外觀免費 · 塔內導覽 14:30（5–10月）約 CHF 20",
+  },
+  Einsteinhaus: {
+    name:  "Einsteinhaus 艾因斯坦故居",
+    emoji: "🕰️",
+    img:   "./images/Einsteinhaus.jpeg",
+    desc:  `<h3>1. 歷史背景</h3>
+    <ul>
+        <li><span class="highlight">《相對論》的誕生搖籃：</span>1902 年至 1905 年間，當時年僅 20 多歲、在伯恩專利局擔任三等技術員的阿爾伯特·愛因斯坦（Albert Einstein），租下了位於伯恩老城區雜貨街 49 號的這間二樓公寓，並與妻子米列娃（Mileva）及長子居住於此。</li>
+        <li><span class="highlight">物理學的「奇蹟之年」</span>：就在這間小小的公寓裡，愛因斯坦於 1905 年發表了四篇具有劃時代意義的論文（包括光電效應、布朗運動、狹義相對論等），徹底顛覆了人類對時間、空間與宇宙的認知，這一年也被物理學界稱為「奇蹟之年（Annus Mirabilis）」。</li>
+    </ul>
+    <h3>2. 核心看點：還原 1900 年代的生活起居與珍貴手稿</h3>
+    <ul>
+        <li><span class="highlight">時空倒流的二樓故居（2nd Floor）</span>走上狭窄的木製階梯來到二樓，展演空間忠實還原了愛因斯坦當年的生活環境。這裡陳列著當年的舊式家具、裝飾壁紙、愛因斯坦用過的書桌、書籍、家族照片以及兒子的搖籃，讓人能近距離想像這位天才科學家一邊搖著搖籃、一邊在桌前構思相對論的歷史畫面。</li>
+         <li><span class="highlight">生平與手稿展覽（3rd Floor）：</span>公寓的三樓則轉型為小型博物館，系統性地展示了愛因斯坦的生平履歷、與伯恩時期的朋友圈（奧林匹亞學院）、珍貴的手稿複製品以及關於他科學成就的紀錄片，是深度了解他思想演變的絕佳空間。</li>
+    </ul>
+    <h3>3. 環境與漫步體驗</h3>
+    <ul>
+        <li><span class="highlight">隱身於世界遺產拱廊之中：</span>愛因斯坦故居就座落在伯恩老城區最著名的雜貨街（Kramgasse）上，距離著名的時鐘塔（Zytglogge）步行僅約 2 分鐘。它的入口非常低調，就隱藏在伯恩經典的 6 公里長中世紀石造拱廊（Lauben）下方，一不留神可能就會錯過。</li>
+    </ul>`,
+    info:  "開放時間： 每日 10:00 - 17:00，Swiss Pass 可以直接免費換票進入參觀",
   },
   berner_munster: {
     name:  "伯恩大教堂 Berner Münster",
     emoji: "⛪",
     img:   "./images/berner_munster.jpg",
-    desc:  "瑞士最高教堂，塔尖高 100.6 公尺，建造工程始於 1421 年，歷時數百年完成。大門雕有精美哥德式《最後審判》浮雕，登上 344 級石階可飽覽伯恩舊城全景。",
-    info:  "教堂免費 · 登塔約 CHF 5 · 週一休息",
+    desc:   `<h3>1. 歷史背景</h3>
+    <ul>
+        <li><span class="highlight">瑞士最高聳的哥德式巨作：</span>始建於 1421 年，這座宏偉的晚期哥德式大教堂歷經了數個世紀的精雕細琢，直到 1893 年高聳的尖塔完工後，才真正宣告全面落成。</li>
+        <li><span class="highlight">信仰與城市的精神支柱</span>：作為瑞士境內規模最大的中世紀教堂，它高達 100.6 公尺的尖塔至今仍傲視全瑞士。它不只是伯恩跨越數百年歷史的城市天際線地標，更是伯恩入選聯合國教科文組織（UNESCO）世界文化遺產的核心支柱。</li>
+    </ul>
+    <h3>2. 核心看點：末日審判正門雕刻與全瑞士最高觀景台</h3>
+    <ul>
+        <li><span class="highlight">正門上的藝術奇蹟《末日審判》</span>走進教堂前，絕對不能錯過大門上方極其震撼的浮雕。這幅由雕刻家埃哈德·京（Erhard Küng）創作的晚期哥德式傑作，包含了 294 個栩栩如生的雕像，精細地描繪了天堂的聖潔、凡間的審判以及地獄的恐懼，是歐洲少數在宗教改革中倖存、保存極為完好的大型石雕。</li>
+        <li><span class="highlight">璀璨的「死亡之舞」彩繪玻璃：</span>教堂內部的中殿高聳且採光極佳，最引人注目的是高大的 15 世紀彩色玻璃窗，其中以《死亡之舞（Dance of Death）》最為著名，其精湛的工藝在陽光穿透時會折射出神聖的光影。</li>
+        <li><span class="highlight">挑戰 344 階的尖塔景觀台：</span>沿著狹窄的石造螺旋階梯步行攀登 344 階抵達尖塔頂端的觀景台，迎面而來的將是毫無遮蔽的 360 度終極巨景。在這裡可以俯瞰整片由紅瓦屋頂組成的伯恩老城區、奔騰環繞的碧綠阿勒河，天氣晴朗時更能遠眺艾格峰與少女峰的壯麗雪線。</li>
+    </ul>
+    <h3>3. 環境與漫步體驗</h3>
+    <ul>
+        <li><span class="highlight">大教堂廣場與後方綠地露台：</span>教堂前方的廣場平日裡安靜優雅，而教堂後方則連接著 大教堂公園（Münsterplattform）。這裡曾是中世紀的教堂墓地，如今已被改建為種滿椴樹、設有長椅的臨河露台，是伯恩市民最喜愛的漫步去處。</li>
+        
+    </ul>`,
+    info:  "開放時間：10:00 - 17:00教堂，教堂中殿（內部參觀）： 完全免費，，登塔約 CHF 5 · 週一休息",
   },
   barenpark: {
     name:  "熊苑 BärenPark",
     emoji: "🐻",
     img:   "./images/barenpark.jpg",
-    desc:  "伯恩市徽動物棕熊的家園，位於舊城旁的阿勒河河畔。園區模擬自然棲息環境，熊隻可自由在河邊、山坡與林地活動，夏季可下河游泳。自中世紀以來，熊是伯恩最受珍視的象徵。",
+    desc:  "伯恩自 1513 年起就有在城內養熊的傳統。最早的舊熊坑（Bärengraben）建於 1857 年，空間狹小且設計冰冷。為了落實動物福利，2009 年瑞士政府耗資百萬，將其改建為延伸至阿勒河畔、面積達 6,000 平方公尺的現代化「熊苑（BärenPark）」，讓伯恩的吉祥物能生活在尊嚴與自然的環境中。",
     info:  "免費入場 · 全天開放",
   },
   rosengarten: {
@@ -588,7 +724,7 @@ const SPOT_DATA = {
 /* ── Day → Spots mapping ── */
 const DAY_SPOTS = {
   1: ['museggmauer','lion_monument','spreuer_bridge','chapel_bridge'],
-  2: ['pilatus_kulm','dragon_path'],
+  2: ['Cogwheel','Dragon_Path'],
   3: ['bundeshaus','zytglogge','berner_munster','barenpark','rosengarten'],
   4: [],
   5: ['matterhorn','gornergrat_observatory','riffelsee'],
