@@ -3,7 +3,6 @@ const DAYS = [
   { id:1, date:"6/14", dow:"日", region:"lucerne", weather:false,
     location:"台灣 → 蘇黎世 → 琉森", short:"琉森",
     summary:"07:10 飛抵 ZRH 機場，蘇黎世短暫停留，下午抵達琉森",
-    duration:"約 9 小時", stay:"琉森（第 1 晚）", stayNote:"下午check in",
     schedule:[
       {t:"07:10",    a:"飛抵 ZRH 機場，出關領行李"},
       {t:"09:00",    a:"搭車前往 Zürich HB，蘇黎世市區散步"},
@@ -34,7 +33,6 @@ const DAYS = [
   { id:2, date:"6/15", dow:"一", region:"lucerne", weather:false,
     location:"琉森 · 皮拉圖斯山", short:"皮拉圖斯山",
     summary:"搭船 + 齒軌火車登皮拉圖斯山，體驗騎龍纜車",
-    duration:"約 8 小時", stay:"琉森（第 2 晚）",
     schedule:[
       {t:"08:38", a:"琉森Pier 2  E2號碼頭", link:"https://maps.app.goo.gl/DDCmsGPiVZVSCbHVA",suf:"08:38搭船"},
       {t:"",      pre:"抵 Alpnachstad（約 50–90 分鐘），轉搭",a:"Alpnachstad PB齒軌火車上山（坐左邊）", link:"https://maps.app.goo.gl/R8JVXbjYYqvaWzbN7"},
@@ -54,7 +52,6 @@ const DAYS = [
   { id:3, date:"6/16", dow:"二", region:"lucerne", weather:false,
     location:"琉森 → 伯恩一日遊", short:"伯恩",
     summary:"伯恩老城漫步、聯邦宮、時鐘塔、玫瑰園、熊苑",
-    duration:"約 8.5 小時", stay:"琉森（第 3 晚）",
     schedule:[
       {t:"",a:"搭火車琉森 → 伯恩（約 1 小時）"},
       {t:"",a:"聯邦宮 Bundeshaus & Bundesplatz",link:"https://maps.app.goo.gl/jbJ8BdYDs4gCBhgV9", spot:"bundeshaus"},
@@ -63,57 +60,41 @@ const DAYS = [
       {t:"",a:"愛因斯坦故居展 Einsteinhaus Bern",link:"https://maps.app.goo.gl/GHW453t5AtF5VaWQA", spot:"Einsteinhaus"},
       {t:"",a:"伯恩大教堂 Berner Münster",link:"https://maps.app.goo.gl/A9ZEVq3pirDsCQ4h9", spot:"berner_munster"},
       {t:"",a:"熊苑 BärenPark（免費）",link:"https://maps.app.goo.gl/3RmYJimmPxJw32Ae8",suf:"看熊(免費廁所) → 玫瑰園 Rosengarten", spot:"barenpark"},
-      {t:"",a:"採買食材，傍晚返回琉森"},
+      {t:"",a:"傍晚返回琉森採買食材，準備隔日午餐或在Chur買"},
     ],
-    tips:"Kornhauskeller 餐廳需訂位，週一至週五 11:30–14:00 及 17:30–22:00。",
-    dining:"Kornhauskeller（建議訂位）",
+    tips:"Kornhauskeller 地窖餐廳需訂位，週一至週五 11:30–14:00 及 17:30–22:00。",
     tags:["UNESCO 世界遺產","城市漫步","花園","熊苑"],
   },
   { id:4, date:"6/17", dow:"三", region:"transit", weather:false,
     location:"琉森 → 庫爾 → 策馬特", short:"移動日",
     summary:"長途移動日：搭火車穿越瑞士抵達策馬特",
-    duration:"約 11 小時", stay:"策馬特（第 1 晚）", stayNote:"琉森飯店最晚 11:00 check out",
+    stayNote:"查隔日天氣",
     schedule:[
-      {t:"11:00 前", a:"琉森飯店 check out"},
-      {t:"12:05",    a:"庫爾（Chur）搭車出發（冰河景觀快車路段）"},
-      {t:"18:07",    a:"抵達策馬特（無燃油車小鎮，電動接駁站）"},
-      {t:"",         a:"Check in，休息放鬆"},
-      {t:"",         a:"晚上散步策馬特村落"},
+      {t:"11:00 前", a:"搭乘07:35 IR75 到 Thalwil 換乘 IR35 ，09:48 到 Chur"},
+      {t:"11:00 前", a:"Chur隨意逛逛，Coop採買午餐",link:"https://maps.app.goo.gl/R2vn2KgvXBfsfBgs6"},
+      {t:"12:05",    a:"提早11:40抵月台搭冰河景觀快車"},
+      {t:"",         pre:"18:07抵達策馬特", a:"BEAUSiTE Zermatt",link:"https://maps.app.goo.gl/AaxrEfCtWDcjyRRA6",suf:"Check in，休息放鬆"},
+      {t:"",         pre:"20:30前走7分鐘到", a:"Zermatt Matterhorn Viewpoint ",link:"https://maps.app.goo.gl/kotwdiEtW2VHtDVW7",suf:"看藍調小鎮夜景(待45分鐘)"},
     ],
-    tips:"若要搭 11–12 點前的班次需 7:30 出飯店，搭 8:09 班車到庫爾（10:22 抵）。策馬特禁燃油車，需改搭電動接駁車。",
+    dining:"瑞士經典的 Rivella 汽水、三明治、堅果",
+    tips:"冰河列車會提早進站等候、安頓大件行李需要時間、上車前列車員會核對車票與找座位",
     tags:["移動日","火車","冰河景觀快車"],
   },
-  { id:5, date:"6/18", dow:"四", region:"zermatt", weather:true,
-    location:"策馬特 · 戈爾納格拉特", short:"戈爾納格拉特",
-    summary:"戈爾納格拉特觀景台、Riffelsee 馬特洪峰倒影、日落",
-    duration:"約 10 小時", stay:"策馬特（第 2 晚）",
-    schedule:[
-      {t:"清晨",     a:"步行到 Kirchbrücke 或 Getwingbrücke 賞晨景，回飯店早餐"},
-      {t:"",         a:"搭 Zermatt GGB 齒軌列車到終點站 Gornergrat（3,089m）", spot:"gornergrat_observatory"},
-      {t:"",         a:"欣賞馬特洪峰群山，瑞士最高山 Dufourspitze（Monte Rosa）", spot:"matterhorn"},
-      {t:"",         a:"搭車到 Rotenboden，步行 15 分鐘到 Riffelsee 賞馬特洪峰倒影", spot:"riffelsee"},
-      {t:"",         a:"步行約 1 小時到 Riffelberg，搭車下山"},
-      {t:"",         a:"返回飯店休息放空"},
-      {t:"18:00",    a:"Restaurant Julen 晚餐"},
-      {t:"日落時分", a:"Zermatt Matterhorn Viewpoint 觀賞日落夜景"},
-    ],
-    tips:"注意高山症。必備：墨鏡、防曬、保暖衣物（山頂約 5–10°C）。",
-    dining:"Restaurant Julen（18:00）",
-    tags:["觀景台","倒影","馬特洪峰","需好天氣"],
-  },
-  { id:6, date:"6/19", dow:"五", region:"zermatt", weather:true,
+   { id:5, date:"6/18", dow:"五", region:"zermatt", weather:true,
     location:"策馬特 · 五湖健行", short:"五湖健行",
     summary:"11 號路線五湖健行，從 Blauherd 走到 Sunnegga",
-    duration:"約 8 小時", stay:"策馬特（第 3 晚）",
+    stay:"klook少女峰訂位",
     schedule:[
-      {t:"08:30", a:"ZBAG 纜車站出發到 Blauherd 站（去程免費）"},
+      {t:"08:30", pre:"8:30", a:"ZBAG 纜車站", link:"https://maps.app.goo.gl/kotwdiEtW2VHtDVW7" ,suf:"出發到 Blauherd 站(廁所)，往下走順時針路線，經典健行路線（約4～5小時）" },
       {t:"",      a:"【湖1】Stellisee — 纜車站步行 20 分鐘，馬特洪峰倒影最美", spot:"stellisee"},
       {t:"",      a:"【湖2】Grindjisee — 湖1 走來約 1 小時，緩上坡，倒影+針葉林很美", spot:"grindjisee"},
-      {t:"",      a:"【湖3】Gruensee — 湖2 走來約 1 小時，無特別可快速通過"},
+      {t:"12:00",      a:"【湖3】Gruensee — 湖2 走來約 1 小時，無特別可快速通過"},
       {t:"",      a:"【湖4】Moosjisee — 湖3 走來 40 分鐘，牛奶藍湖色極美，注意路標", spot:"moosjisee"},
-      {t:"",      a:"【湖5】Leisee（免費）— 湖4 走來全程上坡，有設施，適合游泳戲水"},
-      {t:"",      a:"Sunnegga 搭地下纜車下山回策馬特"},
-      {t:"下午",  a:"策馬特車站大街散步、策馬特博物館"},
+      {t:"",      a:"【湖5】Leisee(廁所)— 湖4 走來全程上坡，有設施，適合游泳戲水"},
+      {t:"",      a:"Sunnegga 跟愛心拍照，搭纜車下山回策馬特"},
+      {t:"",  a:"飯店休息，有體力再逛，策馬特車站大街散步、策馬特博物館"},
+      {t:"18:00",    a:"Restaurant Julen 晚餐", link:"https://maps.app.goo.gl/XrQLXYbqDX91woUn7" },
+      {t:"下午",  a:"查天氣再klook少女峰訂位(強制)"},
     ],
     tips:"若走到湖2 發現太累，立即返回纜車站直接搭到湖5。出發前用 Swisstopo App 下載離線地圖。",
     links:[
@@ -122,10 +103,27 @@ const DAYS = [
     ],
     tags:["健行","五湖","馬特洪峰","需好天氣"],
   },
+  { id:6, date:"6/19", dow:"四", region:"zermatt", weather:true,
+    location:"策馬特 · 戈爾納格拉特", short:"戈爾納格拉特",
+    summary:"戈爾納格拉特觀景台、Riffelsee 馬特洪峰倒影、日落",
+    stayNote:"查隔日天氣",
+    schedule:[
+      {t:"清晨",     pre:"05:20 前就定位拍攝黃金日出", a:"Kirchbrücke 教堂橋", link:"https://maps.app.goo.gl/9MFTqEN5K61Dcb5L8" , suf:"，回飯店吃早餐"},
+      {t:"",          pre:"搭乘", a:"Zermatt GGB鐵路 Gornergrat 登山列車", link:"https://maps.app.goo.gl/nKfcYW8GbzLrDpro6" , suf:"，到終點站Gornergrat",  spot:"gornergrat_observatory"},
+      {t:"",         a:"欣賞馬特洪峰群山，瑞士最高山 Dufourspitze 杜富爾峰，吃東西", spot:"Dufourspitze"},
+      {t:"",         a:"搭車到 Rotenboden，步行 15 分鐘到 Riffelsee 賞馬特洪峰倒影", spot:"riffelsee"},
+      {t:"",         a:"步行約 1 小時到 Riffelberg，搭車下山"},
+      {t:"",         a:"返回飯店休息"},
+    ],
+    tips:"注意高山症。必備：墨鏡、防曬、保暖衣物（山頂約 5–10°C）。",
+    dining:"Restaurant Julen（18:00）",
+    tags:["觀景台","倒影","馬特洪峰","需好天氣"],
+  },
+ 
   { id:7, date:"6/20", dow:"六", region:"transit", weather:true,
     location:"策馬特 → 格林德瓦", short:"移動日",
     summary:"移動至少女峰區，漫步格林德瓦，晚餐起士鍋",
-    duration:"約 12 小時", stay:"格林德瓦（第 1 晚）",
+    stay:"格林德瓦（第 1 晚）",
     schedule:[
       {t:"早上",     a:"悠閒吃早餐，留空到 11:00 退房"},
       {t:"11:00",    a:"退房，搭火車前往格林德瓦（約 3 小時 3 分鐘）"},
@@ -142,7 +140,7 @@ const DAYS = [
   { id:8, date:"6/21", dow:"日", region:"jungfrau", weather:true,
     location:"少女峰 Jungfraujoch（3,454m）", short:"少女峰",
     summary:"登頂少女峰、艾格之路健行",
-    duration:"約 8 小時", stay:"格林德瓦（第 2 晚）",
+    stay:"格林德瓦（第 2 晚）",
     schedule:[
       {t:"08:00", a:"搭 Eiger Express 纜車，轉 Jungfraubahn 穿隧道抵 Jungfraujoch（強制訂位）", spot:"jungfraujoch"},
       {t:"",      a:"Sphinx 觀景台（3,454m）：阿萊奇冰川全景", spot:"sphinx_observatory"},
@@ -157,7 +155,7 @@ const DAYS = [
   { id:9, date:"6/22", dow:"一", region:"jungfrau", weather:true,
     location:"格林德瓦 · First 高山", short:"First",
     summary:"First Cliff Walk 懸崖步橋、巴哈爾普湖健行",
-    duration:"約 8 小時", stay:"格林德瓦（第 3 晚）",
+    stay:"格林德瓦（第 3 晚）",
     schedule:[
       {t:"08:30", a:"搭 Firstbahn 纜車至 First（2,168m）"},
       {t:"",      a:"巴哈爾普湖 Bachalpsee 健行（來回約 2–2.5 小時）", spot:"bachalpsee"},
@@ -169,7 +167,7 @@ const DAYS = [
   { id:10, date:"6/23", dow:"二", region:"zurich", weather:false,
     location:"格林德瓦 → 蘇黎世", short:"蘇黎世",
     summary:"蘇黎世市區漫遊、Lindenhof 夜景、最後晚餐",
-    duration:"-", stay:"蘇黎世（第 1 晚）",
+    stay:"蘇黎世（第 1 晚）",
     schedule:[
       {t:"中午前", a:"從格林德瓦出發前往蘇黎世"},
       {t:"",       a:"蘇黎世市區漫遊、Bahnhofstrasse 購物大道", spot:"bahnhofstrasse"},
@@ -182,7 +180,7 @@ const DAYS = [
   { id:11, date:"6/24", dow:"三", region:"zurich", weather:false,
     location:"蘇黎世 → 台灣", short:"返台",
     summary:"利馬特河畔最後散步，11:10 起飛返台",
-    duration:"-", stay:"返台",
+   stay:"返台",
     schedule:[
       {t:"早上",  a:"利馬特河畔最後漫步"},
       {t:"11:10", a:"蘇黎世 ZRH 機場起飛返台"},
@@ -594,18 +592,35 @@ const SPOT_DATA = {
     name:  "熊苑 BärenPark",
     emoji: "🐻",
     img:   "./images/barenpark.jpg",
-    desc:  "伯恩自 1513 年起就有在城內養熊的傳統。最早的舊熊坑（Bärengraben）建於 1857 年，空間狹小且設計冰冷。為了落實動物福利，2009 年瑞士政府耗資百萬，將其改建為延伸至阿勒河畔、面積達 6,000 平方公尺的現代化「熊苑（BärenPark）」，讓伯恩的吉祥物能生活在尊嚴與自然的環境中。",
+    desc:  `
+    <ul>
+        <li><span class="highlight">從古老「熊坑」到現代現代生態公園：</span>伯恩自 1513 年起就有在城內養熊的傳統。最早的舊熊坑（Bärengraben）建於 1857 年，空間狹小且設計冰冷。為了落實動物福利，2009 年瑞士政府耗資百萬，將其改建為延伸至阿勒河畔、面積達 6,000 平方公尺的現代化「熊苑（BärenPark）」，讓伯恩的吉祥物能生活在尊嚴與自然的環境中。</li>
+    </ul>
+    <h3>Rosengarten Bern 伯恩玫瑰園</h3>
+    <ul>
+        <li><span class="highlight">從生命終點到花團錦簇:</span>位於伯恩老城區東北方對岸的高地上。在 1765 年至 1877 年間，這片視野遼闊的山坡原本是伯恩老城區的市民墓地。</li>
+        <li><span class="highlight">轉型為城市綠色綠洲：</span>1913 年，伯恩市政府決定打破陰暗的歷史意象，將這片高地徹底改建為一座對外開放的公共公園。自 1917 年起，園內開始大規模種植玫瑰，歷經百年的細心培育，如今已成為瑞士最著名、景致最優美的高山花卉園林之一。</li>
+        <li><span class="highlight">百種玫瑰、愛因斯坦長椅與伯恩制高點：</span>在公園的一隅，設置了一座非常受歡迎的青銅雕像長椅。雕像正是曾在伯恩生活的科學家愛因斯坦（Albert Einstein），他神情悠閒地坐在長椅一側，留下了空位。漫步至此的旅人最喜歡坐在他身旁，一邊與大師合影，一邊順著他的視線眺望遠方。</li>
+    </ul> `
+   ,
     info:  "免費入場 · 全天開放",
-  },
-  rosengarten: {
-    name:  "玫瑰園 Rosengarten",
-    emoji: "🌹",
-    img:   "./images/rosengarten.jpg",
-    desc:  "建於 1913 年，種植 220 種、逾 18,000 株玫瑰與鳶尾花，花季時美不勝收。公園地處高地，可俯瞰整個伯恩 UNESCO 世界遺產舊城區與阿勒河全景，是欣賞伯恩最美的視角。",
-    info:  "免費入園 · 全天開放 · 花季約 5–9月",
   },
 
   /* ── 策馬特 ── */
+  Dufourspitze: {
+    name:  "Dufourspitze 杜富爾峰",
+    emoji: "🏔️",
+    img:   "./images/Dufourspitze.jpg",
+    desc:  `
+    <h3>核心看點：終年不化的巨型冰河與群山天際線</h3>
+    <ul>
+      <li><span class="highlight">杜富爾峰（Dufourspitze）： </span>它是羅莎峰這個大山塊中，高度最高的那座「主峰」。</li>
+        <li><span class="highlight">極震撼的戈爾內冰河：</span>杜富爾峰的腳下環繞著阿爾卑斯山區第二大的戈爾內冰河。從遠處眺望，巨大的白色冰舌自陡峭的岩壁間奔騰而下，與杜富爾峰常年積雪的黑色金字塔岩體交織出冰冷、神聖且極具壓迫感的自然史詩畫面。</li>
+        <li><span class="highlight">瑞士的最高榮耀：</span>海拔 4,634 公尺，是整個瑞士境內的最高峰，也是阿爾卑斯山脈僅次於白朗峰（Mont Blanc）的第二高峰。它座落在瑞士與義大利交界的羅莎峰（Monte Rosa）地塊上。</li>
+        <li><span class="highlight">以「瑞士地圖之父」命名：</span>這座高峰最初被稱為「大峰（Gornerhorn）」。直到 1863 年，聯邦政府為了紀念瑞士著名的將軍、頂尖工程師兼地圖學家基歐姆-亨利·杜富爾（Guillaume-Henri Dufour，他主持繪製了瑞士第一套精準的地形圖），正式將這座瑞士最高點命名為「杜富爾峰」。</li>
+    </ul>
+    `,
+  },
   matterhorn: {
     name:  "馬特洪峰 Matterhorn",
     emoji: "🏔️",
@@ -639,14 +654,14 @@ const SPOT_DATA = {
   grindjisee: {
     name:  "格林吉湖 Grindjisee",
     emoji: "🌲",
-    img:   "./images/stellisee.jpg",
+    img:   "./images/Grindjisee.jpg",
     desc:  "五湖路線中最為清幽的湖泊，湖畔林木茂盛，湖水呈深邃墨綠，氛圍靜謐而神秘，相較其他湖泊遊客較少。湖畔設有休憩長椅，可悠閒欣賞雪峰倒影。",
     info:  "免費 · 五湖全程約 13 公里，高差 500 公尺",
   },
   moosjisee: {
     name:  "莫西湖 Moosjisee",
     emoji: "🩵",
-    img:   "./images/stellisee.jpg",
+    img:   "./images/Moosjisee.jpg",
     desc:  "湖水顏色因季節呈現土耳其藍至青綠，色彩極為迷人。湖面倒映馬特洪峰與周邊雪峰群，湖邊野花盛開時景色如畫，是整條健行路線中的一大亮點。",
     info:  "免費 · 健行旺季為 7–10月",
   },
