@@ -4,10 +4,10 @@ const DAYS = [
     location:"台灣 → 蘇黎世 → 琉森", short:"琉森",
     summary:"07:10 飛抵 ZRH 機場，蘇黎世短暫停留，下午抵達琉森",
     schedule:[
-      {t:"07:10",    a:"飛抵 ZRH 機場，出關領行李"},
-      {t:"09:00",    a:"搭車前往 Zürich HB，蘇黎世市區散步"},
-      {t:"11:00",    a:"蘇黎世午餐"},
-      {t:"12:35",    a:"搭火車前往琉森"},
+      {t:"07:10",    a:"07:10飛抵 ZRH 機場，出關領行李"},
+      {t:"10:00",    a:"搭SBB或Tram前往 Zürich HB (free)約10分鐘，寄放行李，逛車站大街"},
+      {t:"11:00",    a:"、走九分鐘到林登霍夫山吃早午餐、沿著利馬特河左岸、走到Bürkliplatz"},
+      {t:"12:35",    a:"搭火車前往琉森(直達特快車（IR）： 約 41 至 50 分鐘 即可抵達)"},
       {t:"13:30",    a:"Hotel Baslertor", link:"https://maps.app.goo.gl/KaL7WRgo7QLQqdD2A",suf:"放行李"},
       {t:"14:00",   a:"Spreuer Bridge", link:"https://maps.app.goo.gl/8gLqpUFPTyNdF1WNA",suf:" 斯普洛耶橋", spot:"spreuer_bridge"},
       {t:"14:00",    a:"Museggmauer", link:"https://maps.app.goo.gl/v3RBi32eecPQ1o4y9",suf:" 穆塞格城牆", spot:"museggmauer"},
@@ -127,10 +127,9 @@ const DAYS = [
     schedule:[
       {t:"早上",     a:"悠閒吃早餐，留空到 11:00 退房"},
       {t:"11:00",    a:"退房，搭火車前往格林德瓦（約 3 小時 3 分鐘）"},
-      {t:"15:00 後", a:"抵達格林德瓦，辦理入住"},
-      {t:"",         a:"格林德瓦教堂 Kirche Grindelwald 漫步"},
-      {t:"",         a:"夢幻山莊村落漫步"},
-      {t:"",         a:"Barrys Restaurant 起士鍋晚餐"},
+      {t:"15:00 後", pre:"抵達格林德瓦，下午3:00辦理入住", a:"Derby Swiss Quality Hotel Grindelwald", link:"https://maps.app.goo.gl/KXgZzTPpqNVkZyZx6" },
+      {t:"",         a:"Kirche Grindelwald 格林德瓦教堂",link:"https://maps.app.goo.gl/KXgZzTPpqNVkZyZx6", suf:"拍攝IG最紅夢幻山坡"},
+      {t:"",         a:"Barrys Restaurant 起士鍋晚餐", link:"https://maps.app.goo.gl/xjoRBjqQ7gNEWWxK9"},
       {t:"",         a:"逛 Coop，留空休息"},
     ],
     tips:"少女峰購票：提前 1–2 天觀察天氣，到 jungfrau.ch 官網購買，補差額 CHF 10 升等訂位。",
@@ -142,13 +141,14 @@ const DAYS = [
     summary:"登頂少女峰、艾格之路健行",
     stay:"格林德瓦（第 2 晚）",
     schedule:[
-      {t:"08:00", a:"搭 Eiger Express 纜車，轉 Jungfraubahn 穿隧道抵 Jungfraujoch（強制訂位）", spot:"jungfraujoch"},
+      {t:"08:00", pre:"8:00 從 ", a:"Grindelwald Terminal", link:"https://maps.app.goo.gl/1QBj7193T2G3HAoZA" , suf:" 搭 Eiger Express 纜車，轉 Jungfraubahn 穿隧道抵 Jungfraujoch（klook訂位）"},
+      {t:"08:00", a:"直達 Eigergletscher（艾格冰川站）", spot:"jungfraujoch"},
       {t:"",      a:"Sphinx 觀景台（3,454m）：阿萊奇冰川全景", spot:"sphinx_observatory"},
       {t:"",      a:"Alpine Sensation 體驗館 · Ice Palace 冰宮 · Lindt 巧克力天堂", spot:"ice_palace"},
-      {t:"",      a:"艾格之路 Eiger Walk 健行至 Kleine Scheidegg（約 1.5 小時）"},
-      {t:"",      a:"搭 Wengernalpbahn 電齒輪車下山返回 Grindelwald"},
+      {t:"",      a:"艾格之路 Eiger Walk 健行至 Kleine Scheidegg（約 1.5 小時），欣賞高山湖泊 Fallbodensee ", spot:"EigerWalk"},
+      {t:"",      a:"搭 Wengernalpbahn 黃綠色電齒輪車下山返回 Grindelwald"},
     ],
-    tips:"3,454m 注意高山反應，建議山頂停留 2–3 小時。強制訂位車票要提早購買。",
+    tips:"3,454m 注意高山反應，建議山頂停留 2–3 小時。",
     links:[{label:"少女峰搭車方式詳解", url:"https://www.gobytrain.com.tw/mountain/detail/110"}],
     tags:["少女峰","冰川","需好天氣","強力推薦"],
   },
@@ -157,7 +157,7 @@ const DAYS = [
     summary:"First Cliff Walk 懸崖步橋、巴哈爾普湖健行",
     stay:"格林德瓦（第 3 晚）",
     schedule:[
-      {t:"08:30", a:"搭 Firstbahn 纜車至 First（2,168m）"},
+      {t:"08:30", a:"搭 Firstbahn 纜車()至 First（2,168m）25 分鐘"},
       {t:"",      a:"巴哈爾普湖 Bachalpsee 健行（來回約 2–2.5 小時）", spot:"bachalpsee"},
       {t:"",      a:"First Cliff Walk by Tissot 空中懸崖步橋", spot:"first_cliff_walk"},
     ],
@@ -169,9 +169,9 @@ const DAYS = [
     summary:"蘇黎世市區漫遊、Lindenhof 夜景、最後晚餐",
     stay:"蘇黎世（第 1 晚）",
     schedule:[
-      {t:"中午前", a:"從格林德瓦出發前往蘇黎世"},
+      {t:"中午前", a:"睡飽，從格林德瓦出發前往蘇黎世，中間轉乘因特拉肯，共計2 小時 41 分鐘"},
       {t:"",       a:"蘇黎世市區漫遊、Bahnhofstrasse 購物大道", spot:"bahnhofstrasse"},
-      {t:"",       a:"利馬特河畔 Limmatquai 散步"},
+      {t:"",       a:"利馬特河右岸、蘇黎世歌劇院散步"},
       {t:"",       a:"Lindenhof 山丘夜景", spot:"lindenhof"},
       {t:"晚上",   a:"最後晚餐"},
     ],
@@ -694,6 +694,21 @@ const SPOT_DATA = {
     img:   "./images/jungfraujoch.jpg",
     desc:  "鑿刻在真實冰層中的地下宮殿，自 1934 年起開放參觀。洞窟內溫度常年約 -3°C，透明藍色冰壁晶瑩剔透，各種精雕冰雕裝飾其中，仿如冰雪世界的童話王國。",
     info:  "含在少女峰票價內 · 洞內約 -3°C，建議帶外套",
+  },
+  EigerWalk : {
+    name:  "EigerWalk",
+    emoji: "🧊",
+    img:   "./images/EigerWalk.avif",
+    desc:   `
+    <h3>Jungfrau Eiger Walk 艾格之路</h3>
+    <ul>
+      <li><span class="highlight">步行時間：</span>只要 45 分鐘，純下坡寬敞大道，從 Eigergletscher 艾格冰河站走到 Kleine Scheidegg 小夏戴克。</li>
+      <li><span class="highlight">近距離觸摸艾格峰北壁： </span>漫步在步道上，高達 1,800 公尺、近乎垂直的巨大黑灰色岩壁就在您的正上方。天氣晴朗時，許多資深登山客會帶著望遠鏡坐在草地上，尋找正在岩壁上挑戰極限的攀登繩隊。</li>
+        <li><span class="highlight">夢幻的高山淚珠：</span>步道中段會經過一座人工蓄水湖——法爾波登湖（Fallbodensee）。這座湖清澈如鏡，水面會完美倒影出艾格峰與僧侶峰（Mönch）的雄偉身影。湖畔還特別設置了一個「木製露天泡腳池」，走累了可以坐在岸邊，把腳浸入冰涼的阿爾卑斯雪水中，看著雪山巨幕，堪稱雲端上的頂級享受。</li>
+        <li><span class="highlight">歷史傳奇「舊變電所博物館」：</span>在靠近湖畔的地方，有一座由早期少女峰鐵路舊變電所（Kirchli）改建的小型免費紀念館。內部陳列著攀登艾格北壁的歷史故事、罹難者的紀念碑，以及一個 1:500 的艾格峰立體木雕模型。按下按鈕，雷射光線會在地導航出歷史上著名的幾條傳奇攀登路線，非常震撼。</li>
+    </ul>
+    `,
+    info:  "不要與「Eiger Trail」搞混",
   },
 
   /* ── 格林德瓦 · First ── */
