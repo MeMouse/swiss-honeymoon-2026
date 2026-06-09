@@ -145,7 +145,7 @@ const DAYS = [
       {t:"08:00", a:"直達 Eigergletscher（艾格冰川站）", spot:"jungfraujoch"},
       {t:"",      a:"Sphinx 觀景台（3,454m）：阿萊奇冰川全景", spot:"sphinx_observatory"},
       {t:"",      a:"Alpine Sensation 體驗館 · Ice Palace 冰宮 · Lindt 巧克力天堂", spot:"ice_palace"},
-      {t:"",      a:"艾格之路 Eiger Walk 健行至 Kleine Scheidegg（約 1.5 小時），欣賞高山湖泊 Fallbodensee ", spot:"EigerWalk"},
+      {t:"",      a:"艾格之路 Eiger Walk 健行至 Kleine Scheidegg 小夏戴克（約 1.5 小時），欣賞高山湖泊 Fallbodensee ", spot:"EigerWalk"},
       {t:"",      a:"搭 Wengernalpbahn 黃綠色電齒輪車下山返回 Grindelwald"},
     ],
     tips:"3,454m 注意高山反應，建議山頂停留 2–3 小時。",
@@ -183,7 +183,7 @@ const DAYS = [
    stay:"返台",
     schedule:[
       {t:"早上",  a:"利馬特河畔最後漫步"},
-      {t:"11:10", a:"蘇黎世 ZRH 機場起飛返台"},
+      {t:"11:10", a:"11:10蘇黎世 ZRH 機場起飛返台"},
     ],
     tags:["返台","機場"],
   },

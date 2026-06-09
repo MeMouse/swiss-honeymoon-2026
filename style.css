@@ -31,16 +31,37 @@
     .hero h1 { font-family: 'Lora', serif; font-size: clamp(1.5rem,5vw,2.1rem); font-weight: 700; letter-spacing: .05em; margin-bottom: 6px; }
     .hero-sub { font-size: .875rem; opacity: .75; letter-spacing: .12em; }
 
-    /* ── Day Tab bar ── */
+    /* ── Two-level tab bar ── */
     .tab-bar {
       position: sticky; top: 0; z-index: 300;
-      background: var(--white); border-bottom: 2px solid var(--border);
-      display: flex; align-items: stretch; height: var(--tab-h);
-      overflow-x: auto; overflow-y: hidden;
-      -webkit-overflow-scrolling: touch; scrollbar-width: none;
+      background: var(--white);
       box-shadow: 0 2px 10px rgba(0,0,0,.07);
     }
-    .tab-bar::-webkit-scrollbar { display: none; }
+
+    /* Row 1 — regions + hotel + notes */
+    .region-bar {
+      display: flex; align-items: stretch; height: 48px;
+      border-bottom: 1px solid var(--border);
+      overflow-x: auto; overflow-y: hidden;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    }
+    .region-bar::-webkit-scrollbar { display: none; }
+
+    .region-btn {
+      flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+      padding: 0 20px; border: none; border-bottom: 3px solid transparent;
+      background: transparent; cursor: pointer; font-family: inherit;
+      font-size: .9rem; font-weight: 600; color: var(--muted);
+      transition: color .15s, border-color .15s, background .15s;
+      margin-bottom: -2px;
+    }
+    .region-btn:hover { color: var(--text); background: var(--bg); }
+    .region-btn.active[data-region="lucerne"]  { border-bottom-color: var(--red);   color: var(--red); }
+    .region-btn.active[data-region="zermatt"]  { border-bottom-color: var(--navy);  color: var(--navy); }
+    .region-btn.active[data-region="jungfrau"] { border-bottom-color: var(--green); color: var(--green); }
+    .region-btn.active[data-region="zurich"]   { border-bottom-color: var(--gray);  color: var(--gray); }
+
+    /* hotel / notes buttons (reuse .tab-btn) */
     .tab-btn {
       flex-shrink: 0; display: flex; flex-direction: column;
       align-items: center; justify-content: center;
@@ -52,12 +73,32 @@
     .tab-btn .tb-date { font-size: .875rem; font-weight: 700; }
     .tab-btn .tb-dot  { font-size: .75rem; }
     .tab-btn:hover    { color: var(--text); background: var(--bg); }
-    .tab-btn.active[data-region="lucerne"]  { border-bottom-color: var(--red);    color: var(--red); }
-    .tab-btn.active[data-region="transit"]  { border-bottom-color: var(--purple); color: var(--purple); }
-    .tab-btn.active[data-region="zermatt"]  { border-bottom-color: var(--navy);   color: var(--navy); }
-    .tab-btn.active[data-region="jungfrau"] { border-bottom-color: var(--green);  color: var(--green); }
-    .tab-btn.active[data-region="zurich"]   { border-bottom-color: var(--gray);   color: var(--gray); }
     .tab-divider { flex-shrink: 0; width: 1px; height: 28px; background: var(--border); align-self: center; }
+
+    /* Row 2 — days within active region */
+    .day-bar {
+      display: flex; align-items: stretch; height: 36px;
+      border-bottom: 2px solid var(--border);
+      background: var(--bg);
+      overflow-x: auto; overflow-y: hidden;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    }
+    .day-bar::-webkit-scrollbar { display: none; }
+    .day-btn {
+      flex-shrink: 0; display: flex; align-items: center; gap: 4px;
+      padding: 0 14px; border: none; border-bottom: 3px solid transparent;
+      background: transparent; cursor: pointer; font-family: inherit;
+      color: var(--muted); white-space: nowrap; margin-bottom: -2px;
+      transition: color .15s, border-color .15s, background .15s;
+    }
+    .day-btn:hover { background: var(--white); color: var(--text); }
+    .day-btn.active[data-group="lucerne"]  { border-bottom-color: var(--red);   color: var(--red);   background: var(--white); font-weight: 700; }
+    .day-btn.active[data-group="zermatt"]  { border-bottom-color: var(--navy);  color: var(--navy);  background: var(--white); font-weight: 700; }
+    .day-btn.active[data-group="jungfrau"] { border-bottom-color: var(--green); color: var(--green); background: var(--white); font-weight: 700; }
+    .day-btn.active[data-group="zurich"]   { border-bottom-color: var(--gray);  color: var(--gray);  background: var(--white); font-weight: 700; }
+    .day-btn.transit { opacity: .7; }
+    .db-date { font-size: .8rem; font-weight: 700; }
+    .db-dow  { font-size: .7rem; opacity: .65; }
 
     /* ── Tab content wrapper ── */
     .tab-content { max-width: 780px; margin: 0 auto; padding: 20px 14px 80px; }

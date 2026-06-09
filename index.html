@@ -12,11 +12,14 @@
 <body>
 
 <div class="hero">
-  <h1>瑞士蜜月 2025</h1>
+  <h1>瑞士蜜月 2026</h1>
   <p class="hero-sub">6月 14日 — 6月 24日 · 11 天 10 夜</p>
 </div>
 
-<nav class="tab-bar" id="tabBar" role="tablist" aria-label="行程日期"></nav>
+<nav class="tab-bar" id="tabBar" role="tablist" aria-label="行程日期">
+  <div class="region-bar" id="regionBar"></div>
+  <div class="day-bar" id="dayBar"></div>
+</nav>
 <div class="tab-content" id="tabContent"></div>
 <button class="back-top" id="backTop" title="回到頂端"><span class="material-symbols-outlined">expand_less</span></button>
 
@@ -83,28 +86,48 @@ const todayKey = `${_t.getMonth()+1}/${_t.getDate()}`;
 
 /* ══════════════ BUILD UI ══════════════ */
 const tabBar     = document.getElementById('tabBar');
+const regionBar  = document.getElementById('regionBar');
+const dayBar     = document.getElementById('dayBar');
 const tabContent = document.getElementById('tabContent');
 let activeIdx = 0;
 const todayDayIdx = DAYS.findIndex(d => d.date === todayKey);
 if (todayDayIdx !== -1) activeIdx = todayDayIdx;
 
-DAYS.forEach((d, i) => {
-  /* ── Tab button ── */
-  if (i > 0 && d.region !== DAYS[i-1].region) {
-    const div = document.createElement('div');
-    div.className = 'tab-divider';
-    tabBar.appendChild(div);
-  }
+const REGION_GROUPS = [
+  { key: 'lucerne',  label: '琉森',    indices: [0,1,2,3] },
+  { key: 'zermatt',  label: '策馬特',  indices: [4,5,6]   },
+  { key: 'jungfrau', label: '格林德瓦', indices: [7,8]    },
+  { key: 'zurich',   label: '蘇黎世',  indices: [9,10]    },
+];
+REGION_GROUPS.forEach(grp => {
   const btn = document.createElement('button');
-  btn.className = 'tab-btn' + (i === activeIdx ? ' active' : '');
+  btn.className = 'region-btn';
   btn.setAttribute('role','tab');
-  btn.setAttribute('aria-selected', i === activeIdx ? 'true':'false');
-  btn.setAttribute('data-region', d.region);
-  btn.setAttribute('data-idx', i);
-  btn.innerHTML = `<span class="tb-date">${d.date}</span>`;
-  btn.addEventListener('click', () => switchTab(i));
-  tabBar.appendChild(btn);
+  btn.setAttribute('aria-selected','false');
+  btn.setAttribute('data-region', grp.key);
+  btn.textContent = grp.label;
+  btn.addEventListener('click', () => switchTab(grp.indices[0]));
+  regionBar.appendChild(btn);
+});
 
+function renderDayBar(regionKey) {
+  dayBar.innerHTML = '';
+  const grp = REGION_GROUPS.find(g => g.key === regionKey);
+  if (!grp) { dayBar.hidden = true; return; }
+  dayBar.hidden = false;
+  grp.indices.forEach(i => {
+    const d = DAYS[i];
+    const b = document.createElement('button');
+    b.className = 'day-btn' + (i === activeIdx ? ' active' : '') + (d.region === 'transit' ? ' transit' : '');
+    b.setAttribute('data-idx', i);
+    b.setAttribute('data-group', grp.key);
+    b.innerHTML = `<span class="db-date">${d.date}</span><span class="db-dow">${d.dow}</span>`;
+    b.addEventListener('click', () => switchTab(i));
+    dayBar.appendChild(b);
+  });
+}
+
+DAYS.forEach((d, i) => {
   /* ── Tab panel ── */
   const isToday  = d.date === todayKey;
   const spotKeys = DAY_SPOTS[d.id] || [];
@@ -181,7 +204,7 @@ DAYS.forEach((d, i) => {
 /* ══════════════ NOTES TAB ══════════════ */
 const notesDivider = document.createElement('div');
 notesDivider.className = 'tab-divider';
-tabBar.appendChild(notesDivider);
+regionBar.appendChild(notesDivider);
 
 const notesBtn = document.createElement('button');
 notesBtn.id = 'notesTabBtn';
@@ -190,7 +213,7 @@ notesBtn.setAttribute('role','tab');
 notesBtn.setAttribute('aria-selected','false');
 notesBtn.setAttribute('data-region','notes');
 notesBtn.innerHTML = `<span class="tb-date"><span class="material-symbols-outlined">edit_note</span></span><span class="tb-dot">備忘</span>`;
-tabBar.appendChild(notesBtn);
+regionBar.appendChild(notesBtn);
 
 const notesPanel = document.createElement('div');
 notesPanel.id = 'notesPanel';
@@ -329,14 +352,17 @@ tabContent.appendChild(notesPanel);
 
 notesBtn.addEventListener('click', () => {
   activeIdx = -1;
+  document.querySelectorAll('.region-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
   document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   hotelPanel.classList.remove('active');
+  hotelBtn.classList.remove('active');
+  hotelBtn.setAttribute('aria-selected','false');
+  dayBar.hidden = true;
   notesBtn.classList.add('active');
   notesBtn.setAttribute('aria-selected','true');
   notesPanel.classList.add('active');
-  notesBtn.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
-  window.scrollTo({top: document.getElementById('tabBar').offsetTop - 1, behavior:'smooth'});
+  window.scrollTo({top: tabBar.offsetTop - 1, behavior:'smooth'});
 });
 
 /* ══════════════ HOTEL TAB ══════════════ */
@@ -347,7 +373,7 @@ hotelBtn.setAttribute('role','tab');
 hotelBtn.setAttribute('aria-selected','false');
 hotelBtn.setAttribute('data-region','hotel');
 hotelBtn.innerHTML = `<span class="tb-date"><span class="material-symbols-outlined">hotel</span></span><span class="tb-dot">住宿</span>`;
-tabBar.appendChild(hotelBtn);
+regionBar.appendChild(hotelBtn);
 
 const hotelPanel = document.createElement('div');
 hotelPanel.id = 'hotelPanel';
@@ -379,14 +405,17 @@ tabContent.appendChild(hotelPanel);
 
 hotelBtn.addEventListener('click', () => {
   activeIdx = -1;
+  document.querySelectorAll('.region-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
   document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   notesPanel.classList.remove('active');
+  notesBtn.classList.remove('active');
+  notesBtn.setAttribute('aria-selected','false');
+  dayBar.hidden = true;
   hotelBtn.classList.add('active');
   hotelBtn.setAttribute('aria-selected','true');
   hotelPanel.classList.add('active');
-  hotelBtn.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
-  window.scrollTo({top: document.getElementById('tabBar').offsetTop - 1, behavior:'smooth'});
+  window.scrollTo({top: tabBar.offsetTop - 1, behavior:'smooth'});
 });
 
 /* ══════════════ SWITCH TAB ══════════════ */
@@ -399,14 +428,15 @@ function switchTab(idx) {
   hotelPanel.classList.remove('active');
   hotelBtn.classList.remove('active');
   hotelBtn.setAttribute('aria-selected','false');
-  document.querySelectorAll('.tab-btn').forEach((b, i) => {
-    b.classList.toggle('active', i === idx);
-    b.setAttribute('aria-selected', i === idx ? 'true':'false');
-  });
   document.querySelectorAll('.tab-panel').forEach((p, i) => p.classList.toggle('active', i === idx));
-  const nb = document.querySelector(`.tab-btn[data-idx="${idx}"]`);
-  if (nb) nb.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
-  window.scrollTo({top: document.getElementById('tabBar').offsetTop - 1, behavior:'smooth'});
+  const grp = REGION_GROUPS.find(g => g.indices.includes(idx));
+  document.querySelectorAll('.region-btn').forEach(b => {
+    const on = b.dataset.region === (grp?.key ?? '');
+    b.classList.toggle('active', on);
+    b.setAttribute('aria-selected', on ? 'true' : 'false');
+  });
+  renderDayBar(grp?.key);
+  window.scrollTo({top: tabBar.offsetTop - 1, behavior:'smooth'});
 }
 
 /* ── Keyboard nav ── */
@@ -416,6 +446,9 @@ tabBar.addEventListener('keydown', e => {
   if (e.key === 'Home')       { e.preventDefault(); switchTab(0); }
   if (e.key === 'End')        { e.preventDefault(); switchTab(DAYS.length - 1); }
 });
+
+/* ── Init ── */
+switchTab(activeIdx);
 
 /* ── Back to top ── */
 const backTop = document.getElementById('backTop');
