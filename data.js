@@ -769,42 +769,44 @@ const DAY_SPOTS = {
 /* ══════════════ HOTEL DATA ══════════════ */
 const HOTELS = [
   {
-    name: "（待填）飯店名稱",
+    name: "Hotel Baslertor",
+    address: "Pfistergasse 17, 6003 Luzern, 瑞士",
     location: "琉森", nights: 3,
-    checkIn:  "6/14（日）16:00",
-    checkOut: "6/17（三）11:00",
-    breakfast: null,       // true / false / "自費" / null（未知）
-    img: null,             // 填入照片路徑或 URL
+    checkIn:  "6/14（日）16:00－22:00",
+    checkOut: "6/17（三）11:00 前",
+    price: 28000,          // 含稅，約 TWD
+    breakfast: false,
     mapLink: null,         // 填入 Google Maps 短網址
-    notes: "",
+    notes: "附冰箱",
   },
   {
-    name: "（待填）飯店名稱",
+    name: "BEAUSiTE Zermatt",
+    address: "Brunnmattgasse 9, 3920 Zermatt, 瑞士",
     location: "策馬特", nights: 3,
     checkIn:  "6/17（三）",
     checkOut: "6/20（六）11:00",
-    breakfast: null,
-    img: null,
+    breakfast: true,
     mapLink: null,
     notes: "無燃油車小鎮，行李需電動接駁車",
   },
   {
-    name: "（待填）飯店名稱",
+    name: "Derby Swiss Quality Hotel Grindelwald",
+    address: "Dorfstrasse 75, 3818 Grindelwald, 瑞士",
     location: "格林德瓦", nights: 3,
     checkIn:  "6/20（六）15:00 後",
     checkOut: "6/23（二）",
-    breakfast: null,
-    img: null,
+    breakfast: true,
     mapLink: null,
     notes: "",
   },
   {
-    name: "（待填）飯店名稱",
+    name: "Hotel Neufeld",
+    address: "Friesenbergstrasse 15, 8055 Zürich, 瑞士",
     location: "蘇黎世", nights: 1,
     checkIn:  "6/23（二）",
     checkOut: "6/24（三）早上",
-    breakfast: null,
-    img: null,
+    price: 6700,           // 含稅，約 TWD
+    breakfast: true,
     mapLink: null,
     notes: "6/24 11:10 起飛，早起退房",
   },

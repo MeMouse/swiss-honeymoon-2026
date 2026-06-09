@@ -93,27 +93,6 @@
     .chip.stay   { background: var(--green-lt); border-color: #6B9C90; color: #3D7060; }
     .chip.dur    { background: var(--navy-lt); border-color: #7AACAC; color: var(--navy); }
 
-    /* ── Sub-tab bar (簡介 / 詳細) ── */
-    .sub-tab-bar {
-      display: flex; border-bottom: 2px solid var(--border);
-      margin-bottom: 16px; background: var(--white);
-      border-radius: 10px 10px 0 0; overflow: hidden;
-    }
-    .sub-tab-btn {
-      flex: 1; padding: 11px 8px; border: none; border-bottom: 3px solid transparent;
-      background: transparent; cursor: pointer; font-family: inherit;
-      font-size: .875rem; color: var(--muted); font-weight: 500;
-      transition: color .15s, background .15s, border-color .15s;
-      margin-bottom: -2px; display: flex; align-items: center; justify-content: center; gap: 5px;
-    }
-    .sub-tab-btn:hover { background: var(--bg); color: var(--text); }
-    .sub-tab-btn.active { color: var(--navy); border-bottom-color: var(--navy); font-weight: 700; background: var(--white); }
-
-    /* ── Sub panels ── */
-    .sub-panel { display: none; }
-    .sub-panel.active { display: block; animation: subIn .18s ease; }
-    @keyframes subIn { from { opacity: 0; } to { opacity: 1; } }
-
     /* ── Schedule (overview) ── */
     .sec-label { font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; margin-top: 2px; }
     .sched-card { background: transparent; box-shadow: none; padding: 0; margin-bottom: 14px; }
@@ -154,25 +133,6 @@
     .links-row a { display: inline-flex; align-items: center; gap: 4px; font-size: .875rem; color: var(--navy); text-decoration: none; padding: 5px 12px; border: 1.5px solid var(--navy); border-radius: 20px; background: var(--white); opacity: .72; transition: opacity .15s, background .15s; }
     .links-row a:hover { opacity: 1; background: var(--navy-lt); }
 
-    /* ── Spot cards (detail) ── */
-    .spot-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
-    @media (min-width: 520px) { .spot-grid { grid-template-columns: repeat(2, 1fr); } }
-
-    .spot-card { background: var(--white); border-radius: 14px; overflow: hidden; box-shadow: var(--sh); display: flex; flex-direction: column; }
-    .spot-img-wrap { position: relative; width: 100%; aspect-ratio: 16/9; background: #D8E2E0; overflow: hidden; }
-    .spot-img-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
-    .spot-card:hover .spot-img-wrap img { transform: scale(1.04); }
-    .spot-img-placeholder { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 2rem; opacity: .4; }
-    .spot-body { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; gap: 7px; }
-    .spot-name { font-size: 1rem; font-weight: 700; line-height: 1.3; color: var(--text); }
-    .spot-desc { font-size: 1rem; color: var(--muted); line-height: 1.65; flex: 1; }
-    .spot-desc ul{ padding-left: 20px;}
-    .spot-info-chip { display: inline-flex; align-items: center; gap: 4px; font-size: .875rem; background: var(--navy-lt); color: var(--navy); padding: 4px 9px; border-radius: 6px; margin-top: 2px; line-height: 1.4; }
-    .spot-map-link { display: inline-flex; align-items: center; gap: 4px; font-size: .875rem; color: var(--navy); text-decoration: none; margin-top: 6px; opacity: .75; transition: opacity .15s; }
-    .spot-map-link:hover { opacity: 1; }
-
-    .no-spots { text-align: center; padding: 40px 20px; color: var(--muted); font-size: 1rem; }
-    .no-spots .ns-icon { font-size: 2.4rem; display: block; margin-bottom: 10px; }
 
     /* ── Day nav arrows ── */
     .day-nav-arrows { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
@@ -197,9 +157,7 @@
     .hotel-panel.active { display: block; animation: panelIn .22s ease; }
     .tab-btn.active[data-region="hotel"] { border-bottom-color: var(--red); color: var(--red); }
     .hotel-card { background: var(--white); border-radius: 14px; overflow: hidden; box-shadow: var(--sh); margin-bottom: 16px; }
-    .hotel-img-wrap { position: relative; width: 100%; aspect-ratio: 16/9; background: #D8E2E0; overflow: hidden; }
-    .hotel-img-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .hotel-img-placeholder { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: .875rem; gap: 6px; }
+
     .hotel-body { padding: 14px 16px 16px; }
     .hotel-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 12px; }
     .hotel-name { font-family: 'Lora', serif; font-size: 1.1rem; font-weight: 700; color: var(--text); line-height: 1.3; }
@@ -287,18 +245,7 @@
     .modal-map-btn { display: inline-flex; align-items: center; gap: 6px; font-size: .9rem; color: var(--navy); text-decoration: none; padding: 10px 20px; border: 1.5px solid var(--navy); border-radius: 20px; background: var(--white); transition: background .15s; }
     .modal-map-btn:hover { background: var(--navy-lt); }
     .modal-map-btn.hidden { display: none; }
-    .modal-desc h3 {
-           margin: 32px 0 8px 0;
-           font-size: 1.25rem;
-        }
-    .modal-desc .highlight {
-            font-weight: 500;
-            color: #932a63;
-        }
-    .modal-desc ul {
-            padding-left: 20px;
-            font-size: 1.125rem;
-        }
-    .modal-desc li {
-            margin: 8px 0 8px 0;
-        }
+    .modal-desc h3 { margin: 32px 0 8px 0; font-size: 1.25rem; }
+    .modal-desc .highlight { font-weight: 500; color: #932a63; }
+    .modal-desc ul { padding-left: 20px; font-size: 1.125rem; }
+    .modal-desc li { margin: 8px 0 8px 0; }

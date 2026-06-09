@@ -36,6 +36,7 @@
   </div>
 </div>
 
+
 <script src="data.js"></script>
 <script>
 /* ══════════════ HELPERS ══════════════ */
@@ -136,32 +137,6 @@ DAYS.forEach((d, i) => {
   const diningHTML = d.dining ? `<div class="info-box dining"><b>${icon('restaurant')} 餐飲</b>${d.dining}</div>` : '';
   const linksHTML  = (d.links && d.links.length) ? `<div class="links-row">${d.links.map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${icon('open_in_new')} ${l.label}</a>`).join('')}</div>` : '';
 
-  // Spot cards HTML
-  let detailHTML;
-  if (spotKeys.length === 0) {
-    const msg = d.region === 'transit' ? '今日為移動日，欣賞沿途窗外風景就是最好的景點。' : '今日為返程日，帶著美好的回憶踏上歸途。';
-    detailHTML = `<div class="no-spots"><span class="ns-icon">${icon(d.region === 'transit' ? 'train' : 'flight')}</span>${msg}</div>`;
-  } else {
-    const cards = spotKeys.map(key => {
-      const s = SPOT_DATA[key];
-      if (!s) return '';
-      return `
-        <div class="spot-card">
-          <div class="spot-img-wrap">
-            <span class="spot-img-placeholder">${s.emoji}</span>
-            <img src="${s.img}" alt="${s.name}" loading="lazy" onerror="this.style.opacity='0'">
-          </div>
-          <div class="spot-body">
-            <div class="spot-name">${s.name}</div>
-            <div class="spot-desc">${s.desc}</div>
-            <div class="spot-info-chip">${icon('info')} ${s.info}</div>
-            ${s.link ? `<a class="spot-map-link" href="${s.link}" target="_blank" rel="noopener">${icon('map')} 在地圖上查看</a>` : ''}
-          </div>
-        </div>`;
-    }).join('');
-    detailHTML = `<div class="spot-grid">${cards}</div>`;
-  }
-
   const panel = document.createElement('div');
   panel.className = 'tab-panel' + (i === activeIdx ? ' active' : '');
   panel.setAttribute('role','tabpanel');
@@ -187,19 +162,10 @@ DAYS.forEach((d, i) => {
 
     ${chipsHTML ? `<div class="chips-row">${chipsHTML}</div>` : ''}
 
-    <div class="sub-tab-bar">
-      <button class="sub-tab-btn active" data-sub="overview"><span class="material-symbols-outlined">list_alt</span> 行程簡介</button>
-      <button class="sub-tab-btn" data-sub="detail"><span class="material-symbols-outlined">photo_camera</span> 景點詳細</button>
-    </div>
-
-    <div class="sub-panel overview active">
+    <div>
       <div class="sec-label">時間軸</div>
       <div class="sched-card"><ul class="timeline">${schedHTML}</ul></div>
       ${diningHTML}${tipsHTML}${linksHTML}
-    </div>
-
-    <div class="sub-panel detail">
-      ${detailHTML}
     </div>`;
 
   // Prev / next
@@ -207,15 +173,7 @@ DAYS.forEach((d, i) => {
     b.addEventListener('click', () => switchTab(i + parseInt(b.getAttribute('data-dir'), 10)));
   });
 
-  // Sub-tab switching
-  panel.querySelectorAll('.sub-tab-btn').forEach(sb => {
-    sb.addEventListener('click', () => {
-      panel.querySelectorAll('.sub-tab-btn').forEach(x => x.classList.remove('active'));
-      panel.querySelectorAll('.sub-panel').forEach(x => x.classList.remove('active'));
-      sb.classList.add('active');
-      panel.querySelector(`.sub-panel.${sb.dataset.sub}`).classList.add('active');
-    });
-  });
+
 
   tabContent.appendChild(panel);
 });
@@ -405,11 +363,6 @@ function breakfastText(b) {
 
 hotelPanel.innerHTML = HOTELS.map(h => `
   <div class="hotel-card">
-    <div class="hotel-img-wrap">
-      ${h.img
-        ? `<img src="${h.img}" alt="${h.name}" loading="lazy">`
-        : `<div class="hotel-img-placeholder">${icon('add_photo_alternate')} 尚未新增照片</div>`}
-    </div>
     <div class="hotel-body">
       <div class="hotel-header">
         <div class="hotel-name">${h.name}</div>
@@ -515,6 +468,7 @@ tabContent.addEventListener('click', e => {
   const btn = e.target.closest('.spot-info-btn');
   if (btn) openSpotModal(btn.dataset.spot, btn.dataset.link);
 });
+
 </script>
 </body>
 </html>
