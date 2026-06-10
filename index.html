@@ -206,6 +206,15 @@ const notesDivider = document.createElement('div');
 notesDivider.className = 'tab-divider';
 regionBar.appendChild(notesDivider);
 
+const snacksBtn = document.createElement('button');
+snacksBtn.id = 'snacksTabBtn';
+snacksBtn.className = 'tab-btn';
+snacksBtn.setAttribute('role','tab');
+snacksBtn.setAttribute('aria-selected','false');
+snacksBtn.setAttribute('data-region','snacks');
+snacksBtn.innerHTML = `<span class="tb-date"><span class="material-symbols-outlined">cookie</span></span><span class="tb-dot">零食</span>`;
+regionBar.appendChild(snacksBtn);
+
 const notesBtn = document.createElement('button');
 notesBtn.id = 'notesTabBtn';
 notesBtn.className = 'tab-btn';
@@ -214,6 +223,25 @@ notesBtn.setAttribute('aria-selected','false');
 notesBtn.setAttribute('data-region','notes');
 notesBtn.innerHTML = `<span class="tb-date"><span class="material-symbols-outlined">edit_note</span></span><span class="tb-dot">備忘</span>`;
 regionBar.appendChild(notesBtn);
+
+const snacksPanel = document.createElement('div');
+snacksPanel.id = 'snacksPanel';
+snacksPanel.className = 'snacks-panel';
+snacksPanel.setAttribute('role','tabpanel');
+snacksPanel.innerHTML = `
+  <div class="snack-item">
+    <div class="snack-item-img">
+      <div class="snack-item-img-placeholder"><img src="images/Laderach.jpg"></div>
+    </div>
+    <div class="snack-item-body">
+      <div class="snack-item-name">Läderach 綜合新鮮巧克力</div>
+      <div class="snack-item-desc">創立於1962年，享譽全球的瑞士頂級手工巧克力品牌。</div>
+      <div class="snack-item-desc">推薦 : 覆盆莓、黑巧榛果...</div>
+      <div class="snack-item-desc">販售地點 : 蘇黎世、琉森、伯恩</div>
+    </div>
+  </div>
+`;
+tabContent.appendChild(snacksPanel);
 
 const notesPanel = document.createElement('div');
 notesPanel.id = 'notesPanel';
@@ -350,6 +378,20 @@ notesPanel.innerHTML = `
 `;
 tabContent.appendChild(notesPanel);
 
+snacksBtn.addEventListener('click', () => {
+  activeIdx = -1;
+  document.querySelectorAll('.region-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+  document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  hotelPanel.classList.remove('active');
+  notesPanel.classList.remove('active');
+  dayBar.hidden = true;
+  snacksBtn.classList.add('active');
+  snacksBtn.setAttribute('aria-selected','true');
+  snacksPanel.classList.add('active');
+  window.scrollTo({top: tabBar.offsetTop - 1, behavior:'smooth'});
+});
+
 notesBtn.addEventListener('click', () => {
   activeIdx = -1;
   document.querySelectorAll('.region-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
@@ -358,6 +400,9 @@ notesBtn.addEventListener('click', () => {
   hotelPanel.classList.remove('active');
   hotelBtn.classList.remove('active');
   hotelBtn.setAttribute('aria-selected','false');
+  snacksPanel.classList.remove('active');
+  snacksBtn.classList.remove('active');
+  snacksBtn.setAttribute('aria-selected','false');
   dayBar.hidden = true;
   notesBtn.classList.add('active');
   notesBtn.setAttribute('aria-selected','true');
@@ -411,6 +456,9 @@ hotelBtn.addEventListener('click', () => {
   notesPanel.classList.remove('active');
   notesBtn.classList.remove('active');
   notesBtn.setAttribute('aria-selected','false');
+  snacksPanel.classList.remove('active');
+  snacksBtn.classList.remove('active');
+  snacksBtn.setAttribute('aria-selected','false');
   dayBar.hidden = true;
   hotelBtn.classList.add('active');
   hotelBtn.setAttribute('aria-selected','true');
@@ -428,6 +476,9 @@ function switchTab(idx) {
   hotelPanel.classList.remove('active');
   hotelBtn.classList.remove('active');
   hotelBtn.setAttribute('aria-selected','false');
+  snacksPanel.classList.remove('active');
+  snacksBtn.classList.remove('active');
+  snacksBtn.setAttribute('aria-selected','false');
   document.querySelectorAll('.tab-panel').forEach((p, i) => p.classList.toggle('active', i === idx));
   const grp = REGION_GROUPS.find(g => g.indices.includes(idx));
   document.querySelectorAll('.region-btn').forEach(b => {
