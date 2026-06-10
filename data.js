@@ -18,7 +18,7 @@ const DAYS = [
       {t:"16:00",    a:"Rathaus Stadt Luzern", link:"https://maps.app.goo.gl/WDMi2DZopm2VHE6v7",suf:" 市政廳", spot:"Rathaus"},
       {t:"16:00",    a:"Hirschenplatz", link:"https://maps.app.goo.gl/ZcHhSU2MRSkoLDGk7",suf:" 沒有鹿的鹿廣場", spot:"Hirschenplatz"},
       {t:"16:00",    a:"Weinmarkt-Brunnen", link:"https://maps.app.goo.gl/MyoknBMp6cxnf5YN6",suf:" 葡萄酒市場", spot:"Weinmarkt"},
-      {t:"17:00",    a:"Confiserie Bachmann - Schwanenplatz", link:"https://maps.app.goo.gl/aHEbbY1QxftwC7R58",suf:"吃冰淇淋"},
+      {t:"17:00",    a:"Läderach", link:"https://maps.app.goo.gl/2K6gkNiKKW4r4dwm9",suf:"買巧克力"},
       {t:"17:00",    a:"Chapel Bridge", link:"https://maps.app.goo.gl/fDhX4ySEGuCPpFWJA",suf:" 卡貝爾教堂橋", spot:"chapel_bridge"},
       {t:"17:00",    a:"Jesuitenkirche Luzern", link:"https://maps.app.goo.gl/C4XDzHrGWjMtzPsD6",suf:" 耶穌會教堂", spot:"Jesuitenkirche"},
       {t:"18:00",    a:"飯店check in"},
@@ -171,7 +171,7 @@ const DAYS = [
     schedule:[
       {t:"中午前", a:"睡飽，從格林德瓦出發前往蘇黎世，中間轉乘因特拉肯，共計2 小時 41 分鐘"},
       {t:"",       a:"蘇黎世市區漫遊、Bahnhofstrasse 購物大道", spot:"bahnhofstrasse"},
-      {t:"",       a:"利馬特河右岸、蘇黎世歌劇院散步"},
+      {t:"",       a:"利馬特河右岸、蘇黎世歌劇院散步、瑞士國立博物館"},
       {t:"",       a:"Lindenhof 山丘夜景", spot:"lindenhof"},
       {t:"晚上",   a:"最後晚餐"},
     ],
