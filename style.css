@@ -216,6 +216,12 @@
     .snacks-panel { display: none; }
     .snacks-panel.active { display: block; animation: panelIn .22s ease; }
     .tab-btn.active[data-region="snacks"] { border-bottom-color: var(--gold); color: var(--gold); }
+    .snack-tabs { display: flex; border-bottom: 2px solid var(--border); margin-bottom: 16px; }
+    .snack-tab-btn { flex: 1; padding: 10px 0; border: none; border-bottom: 3px solid transparent; background: transparent; cursor: pointer; font-family: inherit; font-size: 1rem; font-weight: 600; color: var(--muted); margin-bottom: -2px; transition: color .15s, border-color .15s; }
+    .snack-tab-btn:hover { color: var(--text); }
+    .snack-tab-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
+    .snack-sub-panel { display: none; }
+    .snack-sub-panel.active { display: block; }
     .snack-item { display: flex; gap: 14px; background: var(--white); border-radius: 12px; padding: 14px; margin-bottom: 12px; box-shadow: var(--sh-sm); }
     .snack-item-img { flex-shrink: 0; width: 110px; height: 82px; border-radius: 8px; background: var(--bg); overflow: hidden; }
     .snack-item-img img { width: 100%; height: 100%; object-fit: cover; display: block; }

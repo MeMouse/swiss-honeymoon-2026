@@ -229,19 +229,45 @@ snacksPanel.id = 'snacksPanel';
 snacksPanel.className = 'snacks-panel';
 snacksPanel.setAttribute('role','tabpanel');
 snacksPanel.innerHTML = `
-  <div class="snack-item">
-    <div class="snack-item-img">
-      <div class="snack-item-img-placeholder"><img src="images/Laderach.jpg"></div>
+  <div class="snack-tabs">
+    <button class="snack-tab-btn active" data-snack-tab="souvenir">伴手禮</button>
+    <button class="snack-tab-btn" data-snack-tab="experience">現場體驗</button>
+  </div>
+  <div class="snack-sub-panel active" data-snack-panel="souvenir">
+    <div class="snack-item">
+      <div class="snack-item-img">
+        <img src="images/Sprungli.jpg" alt="Läderach">
+      </div>
+      <div class="snack-item-body">
+        <div class="snack-item-name">Confiserie Sprungli 夢幻逸品松露巧克力</div>
+        <div class="snack-item-desc">從1800年代傳承至今的頂級享受，當日手工松露巧克力要現吃。</div>
+        <div class="snack-item-desc">販售地點 : 蘇黎世</div>
+      </div>
     </div>
-    <div class="snack-item-body">
-      <div class="snack-item-name">Läderach 綜合新鮮巧克力</div>
-      <div class="snack-item-desc">創立於1962年，享譽全球的瑞士頂級手工巧克力品牌。</div>
-      <div class="snack-item-desc">推薦 : 覆盆莓、黑巧榛果...</div>
-      <div class="snack-item-desc">販售地點 : 蘇黎世、琉森、伯恩</div>
+  </div>
+  <div class="snack-sub-panel" data-snack-panel="experience">
+    <div class="snack-item">
+      <div class="snack-item-img">
+        <img src="images/Laderach.jpg" alt="Läderach">
+      </div>
+      <div class="snack-item-body">
+        <div class="snack-item-name">Läderach 綜合新鮮巧克力</div>
+        <div class="snack-item-desc">創立於1962年，享譽全球的瑞士頂級手工巧克力品牌。</div>
+        <div class="snack-item-desc">推薦 : 覆盆莓、黑巧榛果...</div>
+        <div class="snack-item-desc">販售地點 : 蘇黎世、琉森、伯恩</div>
+      </div>
     </div>
   </div>
 `;
 tabContent.appendChild(snacksPanel);
+snacksPanel.querySelectorAll('.snack-tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    snacksPanel.querySelectorAll('.snack-tab-btn').forEach(b => b.classList.remove('active'));
+    snacksPanel.querySelectorAll('.snack-sub-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    snacksPanel.querySelector(`[data-snack-panel="${btn.dataset.snackTab}"]`).classList.add('active');
+  });
+});
 
 const notesPanel = document.createElement('div');
 notesPanel.id = 'notesPanel';
