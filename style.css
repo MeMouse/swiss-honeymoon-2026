@@ -19,6 +19,11 @@
     body { font-family: 'Noto Sans TC', sans-serif; font-size: 16px; background: var(--bg); color: var(--text); line-height: 1.65; }
 
     /* ── Hero ── */
+    .img-fluid{
+      max-width: 100%;
+      width: 100%;
+      margin-bottom: 32px;
+    }
     .hero {
       background: linear-gradient(145deg, #2E5558 0%, #5C4035 100%);
       color: #fff; padding: 28px 20px 24px; text-align: center;
@@ -27,9 +32,12 @@
     .hero::after {
       content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 56px;
       background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 56' preserveAspectRatio='none'%3E%3Cpath d='M0,56 L0,32 L80,18 L160,36 L260,8 L360,30 L440,12 L540,34 L620,6 L700,26 L780,14 L880,32 L960,10 L1060,28 L1140,16 L1200,26 L1200,56Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E") bottom/cover no-repeat;
+      pointer-events: none;
     }
-    .hero h1 { font-family: 'Lora', serif; font-size: clamp(1.5rem,5vw,2.1rem); font-weight: 700; letter-spacing: .05em; margin-bottom: 6px; }
-    .hero-sub { font-size: .875rem; opacity: .75; letter-spacing: .12em; }
+    .hero h1 { font-family: 'Lora', serif; font-size: clamp(1.5rem,5vw,2.1rem); font-weight: 700; letter-spacing: .05em; margin-bottom: 14px; }
+    .hero-snack-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
+    .hero-snack-btn { padding: 8px 22px; border: 2px solid rgba(255,255,255,.6); border-radius: 99px; background: rgba(255,255,255,.12); color: #fff; font-family: inherit; font-size: .9rem; font-weight: 600; cursor: pointer; letter-spacing: .05em; transition: background .15s, border-color .15s; }
+    .hero-snack-btn:hover { background: rgba(255,255,255,.25); border-color: #fff; }
 
     /* ── Two-level tab bar ── */
     .tab-bar {
@@ -216,12 +224,8 @@
     .snacks-panel { display: none; }
     .snacks-panel.active { display: block; animation: panelIn .22s ease; }
     .tab-btn.active[data-region="snacks"] { border-bottom-color: var(--gold); color: var(--gold); }
-    .snack-tabs { display: flex; border-bottom: 2px solid var(--border); margin-bottom: 16px; }
-    .snack-tab-btn { flex: 1; padding: 10px 0; border: none; border-bottom: 3px solid transparent; background: transparent; cursor: pointer; font-family: inherit; font-size: 1rem; font-weight: 600; color: var(--muted); margin-bottom: -2px; transition: color .15s, border-color .15s; }
-    .snack-tab-btn:hover { color: var(--text); }
-    .snack-tab-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
-    .snack-sub-panel { display: none; }
-    .snack-sub-panel.active { display: block; }
+    .snack-sec-label { font-size: 2rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 20px 0 8px; }
+    .snack-sec-label:first-child { margin-top: 2px; }
     .snack-item { display: flex; gap: 14px; background: var(--white); border-radius: 12px; padding: 14px; margin-bottom: 12px; box-shadow: var(--sh-sm); }
     .snack-item-img { flex-shrink: 0; width: 110px; height: 82px; border-radius: 8px; background: var(--bg); overflow: hidden; }
     .snack-item-img img { width: 100%; height: 100%; object-fit: cover; display: block; }

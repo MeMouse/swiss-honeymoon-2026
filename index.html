@@ -13,7 +13,10 @@
 
 <div class="hero">
   <h1>瑞士蜜月 2026</h1>
-  <p class="hero-sub">6月 14日 — 6月 24日 · 11 天 10 夜</p>
+  <div class="hero-snack-btns">
+    <button class="hero-snack-btn" id="heroSouvenirBtn">伴手禮</button>
+    <button class="hero-snack-btn" id="heroExperienceBtn">現場體驗</button>
+  </div>
 </div>
 
 <nav class="tab-bar" id="tabBar" role="tablist" aria-label="行程日期">
@@ -229,45 +232,120 @@ snacksPanel.id = 'snacksPanel';
 snacksPanel.className = 'snacks-panel';
 snacksPanel.setAttribute('role','tabpanel');
 snacksPanel.innerHTML = `
-  <div class="snack-tabs">
-    <button class="snack-tab-btn active" data-snack-tab="souvenir">伴手禮</button>
-    <button class="snack-tab-btn" data-snack-tab="experience">現場體驗</button>
-  </div>
-  <div class="snack-sub-panel active" data-snack-panel="souvenir">
-    <div class="snack-item">
-      <div class="snack-item-img">
-        <img src="images/Sprungli.jpg" alt="Läderach">
-      </div>
-      <div class="snack-item-body">
-        <div class="snack-item-name">Confiserie Sprungli 夢幻逸品松露巧克力</div>
-        <div class="snack-item-desc">從1800年代傳承至今的頂級享受，當日手工松露巧克力要現吃。</div>
-        <div class="snack-item-desc">販售地點 : 蘇黎世</div>
-      </div>
+  <p class="snack-sec-label" id="snackSouvenir">伴手禮</p>
+  <div class="snack-item">
+    <div class="snack-item-img">
+      <img src="images/Sprungli.jpg">
+    </div>
+    <div class="snack-item-body">
+      <div class="snack-item-name">Confiserie Sprungli</div>
+      <p>黃金賞味期：帶回台後 2 到 3 週內吃完。</p>
+      <p>販售地點 : 蘇黎世</p>
     </div>
   </div>
-  <div class="snack-sub-panel" data-snack-panel="experience">
-    <div class="snack-item">
-      <div class="snack-item-img">
-        <img src="images/Laderach.jpg" alt="Läderach">
-      </div>
-      <div class="snack-item-body">
-        <div class="snack-item-name">Läderach 綜合新鮮巧克力</div>
-        <div class="snack-item-desc">創立於1962年，享譽全球的瑞士頂級手工巧克力品牌。</div>
-        <div class="snack-item-desc">推薦 : 覆盆莓、黑巧榛果...</div>
-        <div class="snack-item-desc">販售地點 : 蘇黎世、琉森、伯恩</div>
-      </div>
+  <p>I'd like a box of 16 pieces, with 4 of each of these four flavors, please.</p>
+  <img src="images/Sprungli-02.jpg" alt="Sprungli" class="img-fluid">
+  <div class="snack-item">
+    <div class="snack-item-img">
+      <img src="images/Napolitaines.jpg">
+    </div>
+    <div class="snack-item-body">
+      <div class="snack-item-name">Chocolate Napolitains Box</div>
+      <p>給同事</p>
     </div>
   </div>
+  <div class="snack-item">
+    <div class="snack-item-img">
+      <img src="images/Laderach-GranCru.webp">
+    </div>
+    <div class="snack-item-body">
+      <div class="snack-item-name">Läderach Grand Cru Carrés Box</div>
+      <p>黃金賞味期：帶回台後2個月內吃完。</p>
+    </div>
+  </div>
+  <div class="snack-item">
+    <div class="snack-item-img">
+      <img src="images/Caotina-Noir-Sachet.jpg">
+    </div>
+    <div class="snack-item-body">
+      <div class="snack-item-name">Caotina Noir 黑巧克力粉</div>
+      <p>給同事、自己</p>
+      <p>販售地點 : 大型 Coop</p>
+    </div>
+  </div>
+  <div class="snack-item">
+    <div class="snack-item-img">
+      <img src="images/Kambly.webp">
+    </div>
+    <div class="snack-item-body">
+      <div class="snack-item-name">Kambly</div>
+      <p>給同事、自己</p>
+      <p>販售地點 : Coop</p>
+    </div>
+  </div>
+  <div class="snack-item">
+    <div class="snack-item-img">
+      <img src="images/Herbamare.jpg">
+    </div>
+    <div class="snack-item-body">
+      <div class="snack-item-name">Coop超市有機香草鹽 Herbamare</div>
+      <p>販售地點 : Coop</p>
+    </div>
+  </div>
+  <div class="snack-item">
+    <div class="snack-item-img">
+      <img src="images/Herbamare.jpg">
+    </div>
+    <div class="snack-item-body">
+      <div class="snack-item-name">草本茶</div>
+      <p>販售地點 : Coop</p>
+    </div>
+  </div>
+
+
+  <p class="snack-sec-label" id="snackExperience">現場體驗</p>
+  <div class="snack-item">
+    <div class="snack-item-img">
+      <img src="images/Laderach.jpg" alt="Sprungli">
+    </div>
+    <div class="snack-item-body">
+      <div class="snack-item-name">Läderach 綜合新鮮巧克力</div>
+      <div class="snack-item-desc">創立於1962年，享譽全球的瑞士頂級手工巧克力品牌。</div>
+      <div class="snack-item-desc">推薦 : 覆盆莓、黑巧榛果...</div>
+      <div class="snack-item-desc">販售地點 : 蘇黎世、琉森、伯恩</div>
+    </div>
+  </div>
+  <div class="snack-item">
+    <div class="snack-item-img">
+      <img src="images/Sprungli-01.jpg" alt="Sprungli">
+    </div>
+    <div class="snack-item-body">
+      <div class="snack-item-name">Confiserie Sprungli 熱巧克力 + Luxemburgerli</div>
+      <p>熱巧克力配Luxemburgerli(瑞士迷你甜點)享受下午茶。</p>
+      <p>販售地點 : 蘇黎世</p>
+    </div>
+  </div>
+  <div class="snack-item">
+    <div class="snack-item-img">
+      <img src="images/rivella.jpg">
+    </div>
+    <div class="snack-item-body">
+      <div class="snack-item-name">rivella red 汽水</div>
+      <p>販售地點 : Coop</p>
+    </div>
+  </div>
+  <div class="snack-item">
+    <div class="snack-item-img">
+      <img src="images/Berner-Mandelbärli.jpg">
+    </div>
+    <div class="snack-item-body">
+      <div class="snack-item-name">Berner Mandelbärli 伯恩杏仁熊蛋糕</div>
+      <p>販售地點 : 伯恩 Bäckerei Glatz</p>
+    </div>
+  </div>
+  
 `;
 tabContent.appendChild(snacksPanel);
-snacksPanel.querySelectorAll('.snack-tab-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    snacksPanel.querySelectorAll('.snack-tab-btn').forEach(b => b.classList.remove('active'));
-    snacksPanel.querySelectorAll('.snack-sub-panel').forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    snacksPanel.querySelector(`[data-snack-panel="${btn.dataset.snackTab}"]`).classList.add('active');
-  });
-});
 
 const notesPanel = document.createElement('div');
 notesPanel.id = 'notesPanel';
@@ -526,6 +604,24 @@ tabBar.addEventListener('keydown', e => {
 
 /* ── Init ── */
 switchTab(activeIdx);
+
+/* ── Hero snack buttons ── */
+function goToSnacks(anchorId) {
+  activeIdx = -1;
+  document.querySelectorAll('.region-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+  document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  hotelPanel.classList.remove('active');
+  notesPanel.classList.remove('active');
+  dayBar.hidden = true;
+  snacksBtn.classList.add('active');
+  snacksBtn.setAttribute('aria-selected','true');
+  snacksPanel.classList.add('active');
+  window.scrollTo({top: tabBar.offsetTop - 1, behavior:'smooth'});
+  setTimeout(() => document.getElementById(anchorId).scrollIntoView({behavior:'smooth', block:'start'}), 320);
+}
+document.getElementById('heroSouvenirBtn').addEventListener('click', () => goToSnacks('snackSouvenir'));
+document.getElementById('heroExperienceBtn').addEventListener('click', () => goToSnacks('snackExperience'));
 
 /* ── Back to top ── */
 const backTop = document.getElementById('backTop');

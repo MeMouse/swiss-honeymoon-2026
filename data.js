@@ -55,7 +55,8 @@ const DAYS = [
     schedule:[
       {t:"",a:"搭火車琉森 → 伯恩（約 1 小時）"},
       {t:"",a:"聯邦宮 Bundeshaus & Bundesplatz",link:"https://maps.app.goo.gl/jbJ8BdYDs4gCBhgV9", spot:"bundeshaus"},
-      {t:"",a:"牢籠塔 Käfigturm",link:"https://maps.app.goo.gl/LK7LRqNb4WJJfQyu7", spot:"Kafigturm"},
+      {t:"",a:"獄塔 Käfigturm",link:"https://maps.app.goo.gl/LK7LRqNb4WJJfQyu7", spot:"Kafigturm"},
+      {t:"",a:"Berner Mandelbärli AG",link:"https://maps.app.goo.gl/VRQisikeFa3qCunf9", suf:"首都伯恩（Bern）的經典特色小熊甜點。"},
       {t:"",a:"時鐘塔 Zytglogge（整點機械表演）",link:"https://maps.app.goo.gl/rRYp525efWAjNBx76", spot:"zytglogge"},
       {t:"",a:"愛因斯坦故居展 Einsteinhaus Bern",link:"https://maps.app.goo.gl/GHW453t5AtF5VaWQA", spot:"Einsteinhaus"},
       {t:"",a:"伯恩大教堂 Berner Münster",link:"https://maps.app.goo.gl/A9ZEVq3pirDsCQ4h9", spot:"berner_munster"},
@@ -172,6 +173,7 @@ const DAYS = [
       {t:"中午前", a:"睡飽，從格林德瓦出發前往蘇黎世，中間轉乘因特拉肯，共計2 小時 41 分鐘"},
       {t:"",       a:"蘇黎世市區漫遊、Bahnhofstrasse 購物大道", spot:"bahnhofstrasse"},
       {t:"",       a:"利馬特河右岸、蘇黎世歌劇院散步、瑞士國立博物館"},
+      {t:"",       a:"Confiserie Sprungli 喝熱巧克力，買伴手禮"},
       {t:"",       a:"Lindenhof 山丘夜景", spot:"lindenhof"},
       {t:"晚上",   a:"最後晚餐"},
     ],
