@@ -233,6 +233,21 @@
     .snack-item-body { flex: 1; min-width: 0; }
     .snack-item-name { font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
     .snack-item-desc { font-size: 1rem; color: var(--muted); line-height: 1.6; }
+    .brand-accordion { background: var(--white); border-radius: 12px; margin-bottom: 8px; box-shadow: var(--sh-sm); overflow: hidden; }
+    .brand-accordion > summary { display: flex; align-items: center; justify-content: space-between; padding: 13px 16px; cursor: pointer; list-style: none; font-weight: 500; color: var(--text); user-select: none; gap: 8px; }
+    .brand-accordion > summary::-webkit-details-marker { display: none; }
+    .brand-ac-title { flex: 1; font-size: 1rem; }
+    .brand-ac-icon { color: var(--muted); font-size: 1.25rem !important; transition: transform .2s; flex-shrink: 0; }
+    .brand-accordion[open] > summary .brand-ac-icon { transform: rotate(180deg); }
+    .brand-ac-body { padding: 0 14px 14px; border-top: 1px solid var(--border); }
+    .brand-ac-body .snack-item { margin-top: 12px; margin-bottom: 0; }
+    .brand-ac-body > p { margin: 12px 0 0; font-size: 1rem; color: var(--muted); line-height: 1.6; }
+    .brand-ac-note { font-size: .9rem; color: var(--muted); line-height: 1.5; margin-top: 10px !important; font-style: italic; }
+    .brand-count { font-size: .8rem; color: var(--muted); font-weight: 400; margin-left: 4px; }
+    .img-fluid { width: 100%; height: auto; border-radius: 8px; margin-top: 10px; display: block; }
+    .brand-note-card { background: var(--white); border-radius: 12px; padding: 0; margin-bottom: 8px; box-shadow: var(--sh-sm); overflow: hidden; }
+    .brand-note-tag { font-size: .85rem; font-weight: 700; padding: 8px 14px; letter-spacing: .04em; }
+    .brand-note-card p { font-size: .95rem; color: var(--muted); line-height: 1.7; padding: 10px 14px 13px; }
     .note-sec-label { font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 20px 0 8px; }
     .note-sec-label:first-child { margin-top: 2px; }
     .note-card { background: var(--white); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; box-shadow: var(--sh-sm); line-height: 1.7; }

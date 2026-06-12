@@ -234,99 +234,360 @@ snacksPanel.className = 'snacks-panel';
 snacksPanel.setAttribute('role','tabpanel');
 snacksPanel.innerHTML = `
   <p class="snack-sec-label" id="snackSouvenir">伴手禮</p>
-  <div class="snack-item">
-    <div class="snack-item-img">
-      <img src="images/Sprungli.jpg">
-    </div>
-    <div class="snack-item-body">
-      <div class="snack-item-name">Confiserie Sprungli</div>
-      <p>黃金賞味期：帶回台後 2 到 3 週內吃完。</p>
-      <p>販售地點 : 蘇黎世</p>
-    </div>
-  </div>
-  <p>I'd like a box of 16 pieces, with 4 of each of these four flavors, please.</p>
-  <img src="images/Sprungli-02.jpg" alt="Sprungli" class="img-fluid">
-  <div class="snack-item">
-    <div class="snack-item-img">
-      <img src="images/Napolitaines.jpg">
-    </div>
-    <div class="snack-item-body">
-      <div class="snack-item-name">Läderach Chocolate Napolitains Box</div>
-      <p>給同事</p>
-    </div>
-  </div>
-  <div class="snack-item">
-    <div class="snack-item-img">
-      <img src="images/Laderach-GranCru.webp">
-    </div>
-    <div class="snack-item-body">
-      <div class="snack-item-name">Läderach Grand Cru Carrés Box</div>
-      <p>黃金賞味期：帶回台後2個月內吃完。</p>
-    </div>
-  </div>
-  <div class="snack-item">
-    <div class="snack-item-img">
-      <img src="images/Caotina-Noir-Sachet.jpg">
-    </div>
-    <div class="snack-item-body">
-      <div class="snack-item-name">Caotina Noir 黑巧克力粉</div>
-      <p>給同事、自己</p>
-      <p>販售地點 : 大型 Coop</p>
-    </div>
-  </div>
-  <div class="snack-item">
-    <div class="snack-item-img">
-      <img src="images/Kambly.webp">
-    </div>
-    <div class="snack-item-body">
-      <div class="snack-item-name">Kambly</div>
-      <p>給同事、自己</p>
-      <p>販售地點 : Coop</p>
-    </div>
-  </div>
-  <div class="snack-item">
-    <div class="snack-item-img">
-      <img src="images/Herbamare.jpg">
-    </div>
-    <div class="snack-item-body">
-      <div class="snack-item-name">Coop超市有機香草鹽 Herbamare</div>
-      <p>販售地點 : Coop</p>
-    </div>
-  </div>
-  <div class="snack-item">
-    <div class="snack-item-img">
-      <img src="images/Herbamare.jpg">
-    </div>
-    <div class="snack-item-body">
-      <div class="snack-item-name">草本茶</div>
-      <p>販售地點 : Coop</p>
-    </div>
-  </div>
 
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Confiserie Sprüngli <span class="brand-count">1 項</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Sprungli.jpg"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">Confiserie Sprungli</div>
+          <p>黃金賞味期：帶回台後 2 到 3 週內吃完。</p>
+          <p>販售地點 : 蘇黎世</p>
+        </div>
+      </div>
+      <p class="brand-ac-note">I'd like a box of 16 pieces, with 4 of each of these four flavors, please.</p>
+      <img src="images/Sprungli-02.jpg" alt="Sprungli" class="img-fluid">
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Läderach <span class="brand-count">2 項</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Napolitaines.jpg"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">Läderach Chocolate Napolitains Box</div>
+          <p>給同事</p>
+        </div>
+      </div>
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Laderach-GranCru.webp"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">Läderach Grand Cru Carrés Box</div>
+          <p>黃金賞味期：帶回台後2個月內吃完。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Caotina <span class="brand-count">1 項</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Caotina-Noir-Sachet.jpg"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">Caotina Noir 黑巧克力粉</div>
+          <p>給同事、自己</p>
+          <p>販售地點 : 大型 Coop</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Kambly <span class="brand-count">1 項</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Kambly.webp"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">Kambly</div>
+          <p>給同事、自己</p>
+          <p>販售地點 : Coop</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Coop 其他 <span class="brand-count">2 項</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Herbamare.jpg"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">有機香草鹽 Herbamare</div>
+          <p>販售地點 : Coop</p>
+        </div>
+      </div>
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Herbamare.jpg"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">草本茶</div>
+          <p>販售地點 : Coop</p>
+        </div>
+      </div>
+    </div>
+  </details>
 
   <p class="snack-sec-label" id="heroCoop">Coop救星</p>
-  <div class="snack-item">
-    <div class="snack-item-body">
-      <h2>蔬菜指南</h2>
-      <h3>1、Betty Bossi 羊齒生菜沙拉 Nüsslisalat</h3>
-      <p>這是瑞士最在地、市佔率極高的冬季與春季原生嫩葉菜。</p>
-      <h3>2、Betty Bossi 芝麻菜/綜合嫩葉生菜</h3>
-      <p>6月當地盛產各式戶外萵苣，生菜包鮮嫩不苦。</p>
-      <h3>3、冷藏醃胡蘿蔔絲沙拉 Karottensalat</h3>
-      <p>超市冷藏區一盒盒醃好的胡蘿蔔絲。</p>
-      <h3>4、水果青椒與迷你小黃瓜 Snaq Paprika / Mini-Gurken</h3>
-      <p>放在零食蔬菜區的小包裝。瑞士的蔬菜清洗標準很高，這類包裝打開就能直接咬，水果青椒吃起來像蓮霧一樣甜脆無辛辣感，是旅途中補充維他命 C 最方便的常備菜。</p>
-      <h3>5、本地產草莓 Schweizer Erdbeeren</h3>
-      <p>5月到8月正值瑞士本地草莓季。與進口草莓相比，瑞士本地產的雖然個頭較小，但果肉扎實、香氣極為濃郁且甜度高，洗一下整顆連皮吃非常過癮。</p>
-      <h3>6、扁桃/蟠桃 Flachpfirsich / Saturn Peach</h3>
-      <p>歐洲夏季限定的明星水果。外型扁扁的像飛碟，果皮非常薄，肉質軟綿、多汁且甜度極高，完全不酸。</p>
-      <h3>7、本地產櫻桃 Schweizer Kirschen</h3>
-      <p>6月是瑞士櫻桃的產季巔風，果肉飽滿扎實、多汁且極甜，只要用飲用水沖洗就能當作火車上的零食。</p>
-      <h3>8、本地產覆盆子/藍莓 Himbeeren / Heidelbeeren</h3>
-      <p>6月的夏季莓果完全不酸、香氣濃郁，Coop 常有 250g 或 500g 的盒裝，沖水後直接大口吃非常過癮。</p>
+  <h2>蔬菜指南</h2>
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Betty Bossi 羊齒生菜沙拉 <span class="brand-count">Nüsslisalat</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body"><p>這是瑞士最在地、市佔率極高的冬季與春季原生嫩葉菜。</p></div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Betty Bossi 芝麻菜／綜合嫩葉生菜</span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body"><p>6月當地盛產各式戶外萵苣，生菜包鮮嫩不苦。</p></div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">冷藏醃胡蘿蔔絲沙拉 <span class="brand-count">Karottensalat</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body"><p>超市冷藏區一盒盒醃好的胡蘿蔔絲。</p></div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">水果青椒與迷你小黃瓜 <span class="brand-count">Snaq Paprika / Mini-Gurken</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body"><p>放在零食蔬菜區的小包裝。瑞士的蔬菜清洗標準很高，這類包裝打開就能直接咬，水果青椒吃起來像蓮霧一樣甜脆無辛辣感，是旅途中補充維他命 C 最方便的常備菜。</p></div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">本地產草莓 <span class="brand-count">Schweizer Erdbeeren</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body"><p>5月到8月正值瑞士本地草莓季。與進口草莓相比，瑞士本地產的雖然個頭較小，但果肉扎實、香氣極為濃郁且甜度高，洗一下整顆連皮吃非常過癮。</p></div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">扁桃／蟠桃 <span class="brand-count">Flachpfirsich / Saturn Peach</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body"><p>歐洲夏季限定的明星水果。外型扁扁的像飛碟，果皮非常薄，肉質軟綿、多汁且甜度極高，完全不酸。</p></div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">本地產櫻桃 <span class="brand-count">Schweizer Kirschen</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body"><p>6月是瑞士櫻桃的產季巔峰，果肉飽滿扎實、多汁且極甜，只要用飲用水沖洗就能當作火車上的零食。</p></div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">本地產覆盆子／藍莓 <span class="brand-count">Himbeeren / Heidelbeeren</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body"><p>6月的夏季莓果完全不酸、香氣濃郁，Coop 常有 250g 或 500g 的盒裝，沖水後直接大口吃非常過癮。</p></div>
+  </details>
+  <br/>
+  <h2>肉類與蛋白質指南</h2>
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">烤雞 Heisser Beinschinken <span class="brand-count">配白飯</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Heisser-Beinschinken.jpg" alt="烤雞"></div>
+        <div class="snack-item-body"><p>Coop 最熱銷的現烤熟食，肉質多汁且鹹香夠味，是瑞士公認最省錢、最能大口吃熱肉的選擇。</p></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">瑞士國民香腸 Cervelat</span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Cervelat.jpg" alt="Cervelat"></div>
+        <div class="snack-item-body"><p>瑞士市佔率最高的傳統香腸，開袋即可冷食，口感細緻扎實，帶有德式煙燻風味。</p></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">風乾獵人香腸 Landjäger <span class="brand-count">健行必備</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Landjager.jpg" alt="Landjäger"></div>
+        <div class="snack-item-body"><p>當地人健行必備的傳統肉乾，質地偏硬且風味濃郁、偏鹹，非常適合當作下飯的重口味配菜。</p></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">熱烤火腿／熱肉糕 Fleischkäse <span class="brand-count">配白飯</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Fleischkase.jpg" alt="Fleischkäse"></div>
+        <div class="snack-item-body"><p>在保溫櫃販售的厚切德式肉磚，微熱且帶有肉汁，口感類似細緻的午餐肉，搭配白飯飽足感極高。</p></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">彩虹熟水煮蛋 Picknick-Eier</span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Picknick-Eier.jpg" alt="Picknick-Eier"></div>
+        <div class="snack-item-body"><p>瑞士超市特有的常備熟蛋，蛋殼染色是為了區分生蛋，蛋黃綿密無腥味，剝殼就能為泡麵加蛋。</p></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Aufschnitt Poulet / Truten <span class="brand-count">雞肉片 / 火雞肉片</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Aufschnitt-Poulet.jpg" alt="Aufschnitt Poulet"></div>
+        <div class="snack-item-body"><p>冷藏區最平價的切片冷肉，調味清淡且不油膩，撕碎鋪在白飯或泡麵上能快速補充清爽的蛋白質。</p></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Prix Garantie Thon <span class="brand-count">罐頭魚 — 平價黃標</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Thon.jpg" alt="Prix Garantie Thon"></div>
+        <div class="snack-item-body"><p>Coop 最便宜的魚類來源，水煮或油漬調味大眾化，倒掉水分直接拌飯就是最省錢的魚肉來源。</p></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Speck／Speckwürfel <span class="brand-count">煙燻培根丁</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Speck.jpg" alt="Speck"></div>
+        <div class="snack-item-body"><p>當地常見的熟肉丁，油脂豐富、煙燻鹹度高，放進泡麵用熱水泡開後，油脂融化能讓湯頭多一層濃郁培根香。</p></div>
+      </div>
+    </div>
+  </details>
+
+  <h2>起司指南</h2>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Le Gruyère AOP <span class="brand-count">格呂耶爾起司</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Gruyere.jpg" alt="Le Gruyère AOP"></div>
+        <div class="snack-item-body"><p>瑞士最經典的國民起司。風味核心是極致濃郁的堅果香與醇厚奶香，帶有高雅的微鹹，完全不帶一絲腥臭味。</p></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Tête de Moine Rosettes <span class="brand-count">僧侶頭起司花</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Tete-de-Moine.jpg" alt="Tête de Moine"></div>
+        <div class="snack-item-body"><p>歷史悠久的修道院起司。因為被刮成極薄的花瓣狀，它擁有極大的表面積與豐沛的乳脂感，帶有獨特的木質與草本香氣。</p></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Emmentaler AOP <span class="brand-count">艾曼塔起司</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Emmentaler.jpg" alt="Emmentaler AOP"></div>
+        <div class="snack-item-body"><p>「有洞洞的起司」。帶有溫和的果香與堅果甜味，完全沒有任何一般人害怕的「起司臭味」，是接受度最高、最安全的選擇。</p></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Raclette <span class="brand-count">瑞克雷起司</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Raclette.jpg" alt="Raclette"></div>
+        <div class="snack-item-body"><p>本身帶有比較明顯的發酵乳香，但只要一加熱融化，臭味會瞬間變成極致的焦香與濃郁奶煙燻味。建議配 Bürli 或 Silserli 麵包吃。</p></div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Appenzeller <span class="brand-count">阿彭策爾起司</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Appenzeller.jpg" alt="Appenzeller"></div>
+        <div class="snack-item-body"><p>熟成時職人用數十種草本植物、香料、白葡萄酒的特製鹽水不斷擦拭外皮，吃起來帶有獨特的草本辛辣感與野性香氣，風味非常強烈且帶勁。</p></div>
+      </div>
+    </div>
+  </details>
+
+  <div class="brand-accordion" style="background:var(--gold-lt);box-shadow:none;border:1.5px solid #C4AF6A;">
+    <div style="padding:13px 16px;font-size:.9rem;color:#6B5C25;line-height:1.7;">
+      <strong>✦ Kaltbach（洞穴熟成）或 Bergkäse（高山起司）</strong><br>
+      代表經天然岩洞慢速熟成、或用高山純淨牛乳製作的高級品，風味往往比普通版更濃郁滑順，是當地人自己也搶著買的寶藏起司。
     </div>
   </div>
-  
+
+  <h2>麵包指南</h2>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Bürli <span class="brand-count">瑞士雙子皮鞋麵包</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Burli.jpg" alt="Bürli"></div>
+        <div class="snack-item-body">
+          <p>兩顆圓圓黏在一起的硬殼麵包。外皮非常有嚼勁、越嚼越香，內裡柔軟。瑞士人最公認用來夾香腸或冷肉的「國民野餐麵包」。</p>
+          <p class="brand-ac-note">配法：Cervelat 香腸（切厚片）＋ Le Gruyère AOP 或 Appenzeller 起司 ＋ 迷你小黃瓜</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Weggli <span class="brand-count">瑞士牛奶軟餐包</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Weggli.jpg" alt="Weggli"></div>
+        <div class="snack-item-body">
+          <p>表面中間有一條凹線、長得像屁股的圓形軟麵包。口感微甜、鬆軟且帶有奶香，不習慣歐洲硬麵包的首選。</p>
+          <p class="brand-ac-note">配法：雞肉片 Aufschnitt Poulet ＋ Emmentaler AOP 起司片</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Silserli <span class="brand-count">鹼水織紋餐包</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Silserli.jpg" alt="Silserli"></div>
+        <div class="snack-item-body">
+          <p>表面深褐色、帶切痕的德式結（Pretzel）風味軟法餐包。質地扎實、略帶鹹味，用手橫切撕開，直接塞 2～3 朵起司花進去吃。</p>
+          <p class="brand-ac-note">配法：Salami 薩拉米或 Landjäger 風乾獵人香腸 ＋ Tête de Moine Rosettes 起司花</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Gipfeli <span class="brand-count">瑞士可頌</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Gipfeli.jpg" alt="Gipfeli"></div>
+        <div class="snack-item-body">
+          <p>比法國可頌稍乾一點，但也因此更酥脆、不油膩。在當地切開夾鹹肉和起司是非常奢華好吃的吃法。</p>
+          <p class="brand-ac-note">配法：Gruyère AOP 起司</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Zopf <span class="brand-count">瑞士編織辮子麵包</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Zopf.jpg" alt="Zopf"></div>
+        <div class="snack-item-body">
+          <p>瑞士人週日全家聚會必吃的傳統麵包。Coop 每天都有賣，甚至有一人份的小辮子形狀（Zöpfli），非常適合帶去野餐健行。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <h2>品牌認證</h2>
+
+  <div class="brand-note-card">
+    <div class="brand-note-tag" style="background:#4A7C23;color:#fff;">Prix Garantie　黃底綠字</div>
+    <p>Coop 最便宜的抗通膨品牌，包裝極簡，價格常是其他牌子的一半，是預算有限時買基礎肉片、罐頭的省錢首選。</p>
+  </div>
+
+  <div class="brand-note-card">
+    <div class="brand-note-tag" style="background:#E04A1F;color:#fff;">Coop 自家品牌</div>
+    <p>超市標準自營品，價格與品質介於平價黃標和大品牌之間，品項最齊全，是買香腸、火腿等在地日常食品的穩當選擇。</p>
+  </div>
+
+  <div class="brand-note-card">
+    <div class="brand-note-tag" style="background:#2E5558;color:#fff;">Betty Bossi</div>
+    <p>Coop 的便利鮮食與半成品品牌。專攻「免洗、已切好、附醬汁」的即食沙拉與截切蔬果，單價較高，但最適合完全不生火的懶人。</p>
+  </div>
+
+  <div class="brand-note-card">
+    <div class="brand-note-tag" style="background:#80AB9E;color:#fff;">Karma</div>
+    <p>全素與植物性蔬食品牌，除了鷹嘴豆泥外，有許多調入咖哩或亞洲辛香料的食品，吃膩西式冷肉時換口味很實用。</p>
+  </div>
 `;
 tabContent.appendChild(snacksPanel);
 
