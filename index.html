@@ -228,11 +228,12 @@ notesBtn.setAttribute('data-region','notes');
 notesBtn.innerHTML = `<span class="tb-date"><span class="material-symbols-outlined">edit_note</span></span><span class="tb-dot">備忘</span>`;
 regionBar.appendChild(notesBtn);
 
-const snacksPanel = document.createElement('div');
-snacksPanel.id = 'snacksPanel';
-snacksPanel.className = 'snacks-panel';
-snacksPanel.setAttribute('role','tabpanel');
-snacksPanel.innerHTML = `
+let activeSnacksTab = 'souvenir';
+const snacksSouvenirPanel = document.createElement('div');
+snacksSouvenirPanel.id = 'snacksSouvenirPanel';
+snacksSouvenirPanel.className = 'snacks-panel';
+snacksSouvenirPanel.setAttribute('role','tabpanel');
+snacksSouvenirPanel.innerHTML = `
   <p class="snack-sec-label" id="snackSouvenir">伴手禮</p>
 
   <details class="brand-accordion">
@@ -319,7 +320,12 @@ snacksPanel.innerHTML = `
     </div>
   </details>
 
-  <p class="snack-sec-label" id="heroCoop">Coop救星</p>
+`;
+const snacksCoopPanel = document.createElement('div');
+snacksCoopPanel.id = 'snacksCoopPanel';
+snacksCoopPanel.className = 'snacks-panel';
+snacksCoopPanel.setAttribute('role','tabpanel');
+snacksCoopPanel.innerHTML = `
   <h2>蔬菜指南</h2>
   <details class="brand-accordion">
     <summary><span class="brand-ac-title">Betty Bossi 羊齒生菜沙拉 <span class="brand-count">Nüsslisalat</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
@@ -589,7 +595,299 @@ snacksPanel.innerHTML = `
     <p>全素與植物性蔬食品牌，除了鷹嘴豆泥外，有許多調入咖哩或亞洲辛香料的食品，吃膩西式冷肉時換口味很實用。</p>
   </div>
 `;
-tabContent.appendChild(snacksPanel);
+const snacksExperiencePanel = document.createElement('div');
+snacksExperiencePanel.id = 'snacksExperiencePanel';
+snacksExperiencePanel.className = 'snacks-panel';
+snacksExperiencePanel.setAttribute('role','tabpanel');
+snacksExperiencePanel.innerHTML = `
+  <h2>路邊小吃指南</h2>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Chäsbrätel <span class="brand-count">熱起司麵包</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Chasbratel.jpg" alt="Chäsbrätel"></div>
+        <div class="snack-item-body">
+          <p>市集限定。厚厚一層融化起司豪邁刮在酥脆麵包上，伯恩地區的街頭攤位最經典。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Brezel <span class="brand-count">夾心扭結餅</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Brezel.jpg" alt="Brezel"></div>
+        <div class="snack-item-body">
+          <p>扭結餅源自德國，但瑞士的 Brezelkönig 把它發揚光大成極受歡迎的街頭速食。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Bratwurst / Cervelat <span class="brand-count">烤香腸佐麵包</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Bratwurst.jpg" alt="Bratwurst"></div>
+        <div class="snack-item-body">
+          <p>街頭最常見。炭火現烤香腸，配上一顆傳統圓麵包，抹上芥末直接站在路邊吃。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Rösti to-go <span class="brand-count">現刨薯餅</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Rosti.jpg" alt="Rösti"></div>
+        <div class="snack-item-body">
+          <p>戶外市集大鐵鍋現煎。馬鈴薯絲煎到表面金黃酥脆，用紙盒盛裝，拿著叉子就能在廣場享用。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Vermicelles <span class="brand-count">栗子泥點心</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Vermicelles.jpg" alt="Vermicelles"></div>
+        <div class="snack-item-body">
+          <p>烘焙坊或外帶甜點櫃。栗子泥擠成麵條狀，搭配蛋白霜與鮮奶油，適合路邊隨手補熱量。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <h2>地區美食指南</h2>
+
+  <p class="region-food-label">琉森限定</p>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Confiserie Bachmann <span class="brand-count">Schwanenplatz</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Bachmann-Schutzengeli.jpg" alt="Schutzengeli"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">Schutzengeli（守護天使巧克力）</div>
+          <p>Bachmann 的鎮店之寶！外層包裹脆皮、內餡極其絲滑的榛果夾心巧克力。</p>
+        </div>
+      </div>
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Bachmann-Sandwich.jpg" alt="Gourmet Sandwich"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">Gourmet Sandwiches</div>
+          <p>麵包外帶櫃在瑞士上班族中極受歡迎，尤其是 Chicken Avocado（雞肉酪梨）口味。</p>
+        </div>
+      </div>
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Bachmann-Kugeli.jpg" alt="Chügelipastete"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">Luzerner Chügelipastete（琉森酥皮肉丸餅）</div>
+          <p>原為琉森著名大菜（酥皮空心圓餅塞滿小牛肉丸與蘑菇醬），烘焙坊將其做成掌心大小的外帶鹹派。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Heini Conditorei <span class="brand-count">Löwenplatz</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Heini-Regentropfli.jpg" alt="Regentröpfli"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">Luzerner Regentröpfli（琉森的小雨滴）</div>
+          <p>被收錄於「瑞士烹飪遺產」的傳統酒心巧克力。咬開脆口外殼後，包裹著香醇的 Kirsch 櫻桃白蘭地烈酒。</p>
+        </div>
+      </div>
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Heini-Kirschtorte.jpg" alt="Kirschtorte"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">Zuger Kirschtorte（楚格櫻桃蛋糕）</div>
+          <p>瑞士中部最頂級的櫻桃蛋糕。由蛋白霜、海綿蛋糕、厚厚一層粉紅色的櫻桃酒奶油層層疊加。</p>
+        </div>
+      </div>
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Heini-Birnenweggen.jpg" alt="Birnenweggen"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">Luzerner Birnenweggen（琉森梨子麵包卷）</div>
+          <p>列入「瑞士非物質文化遺產」的傳統香料糕點。薄酥皮包入蜜餞梨子泥（混合肉桂、丁香、核桃、烈酒）烘烤。</p>
+          <p class="brand-ac-note">配法：疊上 Appenzeller 起司 ＋ 咖啡，適合健行途中食用</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <p class="region-food-label">伯恩限定</p>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Gelateria di Berna</span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Gelateria-Berna.jpg" alt="Gelateria di Berna"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">義式冰淇淋 Gelato</div>
+          <p>全伯恩最瘋狂的冰淇淋店。結合瑞士極高品質在地鮮乳與創新口味，推薦「大黃（Rhubarb）」、「生薑巧克力」或當季水果雪酪。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <p class="region-food-label">策馬特限定</p>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Fuchs Bakery & Cafe</span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Fuchs-Matterhorn.jpg" alt="Fuchs Matterhorn Chocolate"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">馬特洪峰造型巧克力</div>
+          <p>策馬特最具代表性的在地連鎖烘焙坊，鎮上有多家分店，非常適合外帶三明治、鹹派或甜點帶上山野餐。馬特洪峰造型巧克力造型極具特色，也很適合當伴手禮。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Stefanie's Crêperie</span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Stefanie-Crepe.jpg" alt="Stefanie's Crêperie"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">人氣排隊可麗餅</div>
+          <p>甜款：「砂糖＋黃檸檬汁」或「蘋果醬＋肉桂」。鹹款：「蘑菇火腿酸奶可麗餅」，餅皮較厚且配料扎實，拿在手上當下午茶非常過癮。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Take it Döner</span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Takeit-Doner.jpg" alt="Take it Döner"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">Döner Kebab / Big Burger</div>
+          <p>現切香烤肉片搭配滿滿生菜與特製醬料，份量大、熱氣騰騰，約 15 CHF，在寒冷山城裡吃上一份非常滿足。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Soupi Street Food Kitchen</span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Soupi.jpg" alt="Soupi"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">每日現熬濃湯</div>
+          <p>每天提供不同熱湯選擇，如「焗烤馬鈴薯濃湯」等，質地濃郁。微涼或飄雪的日子裡，捧著熱騰騰的濃湯坐在路邊欣賞馬特洪峰，非常療癒。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <p class="region-food-label">格林德瓦限定</p>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Bäckerei Ringgenberg</span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Ringgenberg-Sourdough.jpg" alt="Sourdough"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">艾格峰山泉水低溫發酵酸麵包（Sourdough）</div>
+          <p>使用格林德瓦當地山泉水、鹽、小麥與黑麥新鮮現烤，口感極具嚼勁且越嚼越香。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Molkerei Gertsch <span class="brand-count">週二–六營業</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Gertsch-Alpkase.jpg" alt="Alpkäse"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">阿爾卑斯乳酪 Berner Alpkäse</div>
+          <p>少女峰區絕對不能錯過的在地乳酪。秋冬春季有現刮現融化的熱起司（Raclette to go）；夏季仍有硬乳酪冷盤與自製起司火鍋真空包。</p>
+          <p class="brand-ac-note">營業：週二–五 09:00–12:00, 16:00–18:30 ／ 週六 08:00–12:00, 14:00–17:00 ／ 週日、週一公休</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <p class="region-food-label">蘇黎世限定</p>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Sternen Grill</span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Sternen-Bratwurst.jpg" alt="St. Galler Bratwurst"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">St. Galler Bratwurst（聖加侖白香腸）</div>
+          <p>點一份現烤香腸，店家附贈外皮酥脆的傳統 Gold-Bürli 圓麵包，以及最出名的特製黃芥末醬。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Confiserie Sprüngli <span class="brand-count">Bahnhofstrasse</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Sprungli-01.jpg" alt="Luxemburgerli"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">Luxemburgerli（盧森堡小漢堡）</div>
+          <p>蘇黎世限定的迷你版馬卡龍！尺寸比法式馬卡龍小一號，口感更輕盈蓬鬆，內餡鮮奶油極度細緻。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Rheinfelder Bierhalle</span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Rheinfelder-CordonBleu.jpg" alt="Cordon Bleu"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">Cordon Bleu 藍帶豬排 ＋ Rösti</div>
+          <p>瑞士煎薯餅搭配藍帶豬排，是這家老牌啤酒館的招牌組合。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+`;
+const ALL_SNACKS_PANELS = [snacksSouvenirPanel, snacksCoopPanel, snacksExperiencePanel];
+
+function renderSnacksSubTabs() {
+  dayBar.innerHTML = '';
+  dayBar.hidden = false;
+  [{key:'souvenir',label:'伴手禮'},{key:'experience',label:'當地店家'},{key:'coop',label:'Coop救星'}].forEach(t => {
+    const b = document.createElement('button');
+    b.className = 'day-btn snacks-sub-btn' + (activeSnacksTab === t.key ? ' active' : '');
+    b.setAttribute('data-tab', t.key);
+    b.setAttribute('data-group', 'snacks');
+    b.textContent = t.label;
+    b.addEventListener('click', () => showSnacksTab(t.key));
+    dayBar.appendChild(b);
+  });
+}
+
+function showSnacksTab(tab) {
+  activeSnacksTab = tab;
+  ALL_SNACKS_PANELS.forEach(p => p.classList.remove('active'));
+  if (tab === 'souvenir') snacksSouvenirPanel.classList.add('active');
+  else if (tab === 'experience') snacksExperiencePanel.classList.add('active');
+  else snacksCoopPanel.classList.add('active');
+  document.querySelectorAll('.snacks-sub-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-tab') === tab));
+}
+
+tabContent.appendChild(snacksSouvenirPanel);
+tabContent.appendChild(snacksCoopPanel);
+tabContent.appendChild(snacksExperiencePanel);
 
 const notesPanel = document.createElement('div');
 notesPanel.id = 'notesPanel';
@@ -736,7 +1034,8 @@ snacksBtn.addEventListener('click', () => {
   dayBar.hidden = true;
   snacksBtn.classList.add('active');
   snacksBtn.setAttribute('aria-selected','true');
-  snacksPanel.classList.add('active');
+  renderSnacksSubTabs();
+  showSnacksTab(activeSnacksTab);
   window.scrollTo({top: tabBar.offsetTop - 1, behavior:'smooth'});
 });
 
@@ -748,7 +1047,7 @@ notesBtn.addEventListener('click', () => {
   hotelPanel.classList.remove('active');
   hotelBtn.classList.remove('active');
   hotelBtn.setAttribute('aria-selected','false');
-  snacksPanel.classList.remove('active');
+  ALL_SNACKS_PANELS.forEach(p => p.classList.remove('active'));
   snacksBtn.classList.remove('active');
   snacksBtn.setAttribute('aria-selected','false');
   dayBar.hidden = true;
@@ -804,7 +1103,7 @@ hotelBtn.addEventListener('click', () => {
   notesPanel.classList.remove('active');
   notesBtn.classList.remove('active');
   notesBtn.setAttribute('aria-selected','false');
-  snacksPanel.classList.remove('active');
+  ALL_SNACKS_PANELS.forEach(p => p.classList.remove('active'));
   snacksBtn.classList.remove('active');
   snacksBtn.setAttribute('aria-selected','false');
   dayBar.hidden = true;
@@ -824,7 +1123,7 @@ function switchTab(idx) {
   hotelPanel.classList.remove('active');
   hotelBtn.classList.remove('active');
   hotelBtn.setAttribute('aria-selected','false');
-  snacksPanel.classList.remove('active');
+  ALL_SNACKS_PANELS.forEach(p => p.classList.remove('active'));
   snacksBtn.classList.remove('active');
   snacksBtn.setAttribute('aria-selected','false');
   document.querySelectorAll('.tab-panel').forEach((p, i) => p.classList.toggle('active', i === idx));
@@ -850,23 +1149,22 @@ tabBar.addEventListener('keydown', e => {
 switchTab(activeIdx);
 
 /* ── Hero snack buttons ── */
-function goToSnacks(anchorId) {
+function goToSnacks(tab) {
   activeIdx = -1;
   document.querySelectorAll('.region-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
   document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   hotelPanel.classList.remove('active');
   notesPanel.classList.remove('active');
-  dayBar.hidden = true;
+  renderSnacksSubTabs();
   snacksBtn.classList.add('active');
   snacksBtn.setAttribute('aria-selected','true');
-  snacksPanel.classList.add('active');
+  showSnacksTab(tab);
   window.scrollTo({top: tabBar.offsetTop - 1, behavior:'smooth'});
-  setTimeout(() => document.getElementById(anchorId).scrollIntoView({behavior:'smooth', block:'start'}), 320);
 }
-document.getElementById('heroSouvenirBtn').addEventListener('click', () => goToSnacks('snackSouvenir'));
-document.getElementById('heroExperienceBtn').addEventListener('click', () => goToSnacks('snackCoop'));
-document.getElementById('heroCoopBtn').addEventListener('click', () => goToSnacks('heroCoop'));
+document.getElementById('heroSouvenirBtn').addEventListener('click', () => goToSnacks('souvenir'));
+document.getElementById('heroExperienceBtn').addEventListener('click', () => goToSnacks('experience'));
+document.getElementById('heroCoopBtn').addEventListener('click', () => goToSnacks('coop'));
 
 /* ── Back to top ── */
 const backTop = document.getElementById('backTop');

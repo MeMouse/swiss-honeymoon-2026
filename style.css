@@ -104,6 +104,7 @@
     .day-btn.active[data-group="zermatt"]  { border-bottom-color: var(--navy);  color: var(--navy);  background: var(--white); font-weight: 700; }
     .day-btn.active[data-group="jungfrau"] { border-bottom-color: var(--green); color: var(--green); background: var(--white); font-weight: 700; }
     .day-btn.active[data-group="zurich"]   { border-bottom-color: var(--gray);  color: var(--gray);  background: var(--white); font-weight: 700; }
+    .day-btn.active[data-group="snacks"]  { border-bottom-color: var(--gold);  color: var(--gold);  background: var(--white); font-weight: 700; }
     .day-btn.transit { opacity: .7; }
     .db-date { font-size: 1rem; font-weight: 700; }
     .db-dow  { font-size: .9rem; opacity: .65; }
@@ -243,11 +244,13 @@
     .brand-ac-body .snack-item { margin-top: 12px; margin-bottom: 0; }
     .brand-ac-body > p { margin: 12px 0 0; font-size: 1rem; color: var(--muted); line-height: 1.6; }
     .brand-ac-note { font-size: .9rem; color: var(--muted); line-height: 1.5; margin-top: 10px !important; font-style: italic; }
-    .brand-count { font-size: .8rem; color: var(--muted); font-weight: 400; margin-left: 4px; }
+    .brand-count { font-size: 0.75rem; color: var(--muted); font-weight: 400; margin-left: 4px; }
     .img-fluid { width: 100%; height: auto; border-radius: 8px; margin-top: 10px; display: block; }
     .brand-note-card { background: var(--white); border-radius: 12px; padding: 0; margin-bottom: 8px; box-shadow: var(--sh-sm); overflow: hidden; }
     .brand-note-tag { font-size: .85rem; font-weight: 700; padding: 8px 14px; letter-spacing: .04em; }
     .brand-note-card p { font-size: .95rem; color: var(--muted); line-height: 1.7; padding: 10px 14px 13px; }
+    .snacks-panel h2 { font-size: 1rem; font-weight: 700; letter-spacing: .06em; color: var(--muted); margin: 22px 0 10px; padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+    .region-food-label { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); background: var(--bg); border-radius: 6px; padding: 4px 10px; display: inline-block; margin: 14px 0 8px; }
     .note-sec-label { font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 20px 0 8px; }
     .note-sec-label:first-child { margin-top: 2px; }
     .note-card { background: var(--white); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; box-shadow: var(--sh-sm); line-height: 1.7; }
