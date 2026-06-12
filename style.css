@@ -26,7 +26,7 @@
     }
     .hero {
       background: linear-gradient(145deg, #2E5558 0%, #5C4035 100%);
-      color: #fff; padding: 28px 20px 24px; text-align: center;
+      color: #fff; padding: 28px 16px 24px; text-align: center;
       position: relative; overflow: hidden;
     }
     .hero::after {

@@ -15,7 +15,8 @@
   <h1>瑞士蜜月 2026</h1>
   <div class="hero-snack-btns">
     <button class="hero-snack-btn" id="heroSouvenirBtn">伴手禮</button>
-    <button class="hero-snack-btn" id="heroExperienceBtn">現場體驗</button>
+    <button class="hero-snack-btn" id="heroExperienceBtn">當地店家</button>
+    <button class="hero-snack-btn" id="heroCoopBtn">Coop救星</button>
   </div>
 </div>
 
@@ -250,7 +251,7 @@ snacksPanel.innerHTML = `
       <img src="images/Napolitaines.jpg">
     </div>
     <div class="snack-item-body">
-      <div class="snack-item-name">Chocolate Napolitains Box</div>
+      <div class="snack-item-name">Läderach Chocolate Napolitains Box</div>
       <p>給同事</p>
     </div>
   </div>
@@ -303,44 +304,26 @@ snacksPanel.innerHTML = `
   </div>
 
 
-  <p class="snack-sec-label" id="snackExperience">現場體驗</p>
+  <p class="snack-sec-label" id="heroCoop">Coop救星</p>
   <div class="snack-item">
-    <div class="snack-item-img">
-      <img src="images/Laderach.jpg" alt="Sprungli">
-    </div>
     <div class="snack-item-body">
-      <div class="snack-item-name">Läderach 綜合新鮮巧克力</div>
-      <div class="snack-item-desc">創立於1962年，享譽全球的瑞士頂級手工巧克力品牌。</div>
-      <div class="snack-item-desc">推薦 : 覆盆莓、黑巧榛果...</div>
-      <div class="snack-item-desc">販售地點 : 蘇黎世、琉森、伯恩</div>
-    </div>
-  </div>
-  <div class="snack-item">
-    <div class="snack-item-img">
-      <img src="images/Sprungli-01.jpg" alt="Sprungli">
-    </div>
-    <div class="snack-item-body">
-      <div class="snack-item-name">Confiserie Sprungli 熱巧克力 + Luxemburgerli</div>
-      <p>熱巧克力配Luxemburgerli(瑞士迷你甜點)享受下午茶。</p>
-      <p>販售地點 : 蘇黎世</p>
-    </div>
-  </div>
-  <div class="snack-item">
-    <div class="snack-item-img">
-      <img src="images/rivella.jpg">
-    </div>
-    <div class="snack-item-body">
-      <div class="snack-item-name">rivella red 汽水</div>
-      <p>販售地點 : Coop</p>
-    </div>
-  </div>
-  <div class="snack-item">
-    <div class="snack-item-img">
-      <img src="images/Berner-Mandelbärli.jpg">
-    </div>
-    <div class="snack-item-body">
-      <div class="snack-item-name">Berner Mandelbärli 伯恩杏仁熊蛋糕</div>
-      <p>販售地點 : 伯恩 Bäckerei Glatz</p>
+      <h2>蔬菜指南</h2>
+      <h3>1、Betty Bossi 羊齒生菜沙拉 Nüsslisalat</h3>
+      <p>這是瑞士最在地、市佔率極高的冬季與春季原生嫩葉菜。</p>
+      <h3>2、Betty Bossi 芝麻菜/綜合嫩葉生菜</h3>
+      <p>6月當地盛產各式戶外萵苣，生菜包鮮嫩不苦。</p>
+      <h3>3、冷藏醃胡蘿蔔絲沙拉 Karottensalat</h3>
+      <p>超市冷藏區一盒盒醃好的胡蘿蔔絲。</p>
+      <h3>4、水果青椒與迷你小黃瓜 Snaq Paprika / Mini-Gurken</h3>
+      <p>放在零食蔬菜區的小包裝。瑞士的蔬菜清洗標準很高，這類包裝打開就能直接咬，水果青椒吃起來像蓮霧一樣甜脆無辛辣感，是旅途中補充維他命 C 最方便的常備菜。</p>
+      <h3>5、本地產草莓 Schweizer Erdbeeren</h3>
+      <p>5月到8月正值瑞士本地草莓季。與進口草莓相比，瑞士本地產的雖然個頭較小，但果肉扎實、香氣極為濃郁且甜度高，洗一下整顆連皮吃非常過癮。</p>
+      <h3>6、扁桃/蟠桃 Flachpfirsich / Saturn Peach</h3>
+      <p>歐洲夏季限定的明星水果。外型扁扁的像飛碟，果皮非常薄，肉質軟綿、多汁且甜度極高，完全不酸。</p>
+      <h3>7、本地產櫻桃 Schweizer Kirschen</h3>
+      <p>6月是瑞士櫻桃的產季巔風，果肉飽滿扎實、多汁且極甜，只要用飲用水沖洗就能當作火車上的零食。</p>
+      <h3>8、本地產覆盆子/藍莓 Himbeeren / Heidelbeeren</h3>
+      <p>6月的夏季莓果完全不酸、香氣濃郁，Coop 常有 250g 或 500g 的盒裝，沖水後直接大口吃非常過癮。</p>
     </div>
   </div>
   
@@ -621,7 +604,8 @@ function goToSnacks(anchorId) {
   setTimeout(() => document.getElementById(anchorId).scrollIntoView({behavior:'smooth', block:'start'}), 320);
 }
 document.getElementById('heroSouvenirBtn').addEventListener('click', () => goToSnacks('snackSouvenir'));
-document.getElementById('heroExperienceBtn').addEventListener('click', () => goToSnacks('snackExperience'));
+document.getElementById('heroExperienceBtn').addEventListener('click', () => goToSnacks('snackCoop'));
+document.getElementById('heroCoopBtn').addEventListener('click', () => goToSnacks('heroCoop'));
 
 /* ── Back to top ── */
 const backTop = document.getElementById('backTop');
