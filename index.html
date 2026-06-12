@@ -290,7 +290,7 @@ snacksSouvenirPanel.innerHTML = `
     <summary><span class="brand-ac-title">Kambly <span class="brand-count">1 項</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
     <div class="brand-ac-body">
       <div class="snack-item">
-        <div class="snack-item-img"><img src="images/Kambly.webp"></div>
+        <div class="snack-item-img"><img src="images/Kambly-Bretzeli.jpg"></div>
         <div class="snack-item-body">
           <div class="snack-item-name">Kambly</div>
           <p>給同事、自己</p>
@@ -308,6 +308,14 @@ snacksSouvenirPanel.innerHTML = `
         <div class="snack-item-body">
           <div class="snack-item-name">有機香草鹽 Herbamare</div>
           <p>販售地點 : Coop</p>
+        </div>
+      </div>
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Waldhonig.jpg"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">森林蜜</div>
+          <p>瑞士在地產「森林蜜」 (Schweizer Waldhonig)請在 Coop 的蜂蜜櫃直接尋找瓶身有瑞士國旗、液態、顏色呈現深琥珀色（像黑糖水顏色）的 Waldhonig。<br/>品牌建議：Naturaplan Bio Waldhonig、 Coop Pro Montagna（綠色有機標）
+避開平價款：如果看到寫著 "Qualité & Prix"（藍白標）或者是用透明塑膠擠壓瓶裝、價格只要 3~4 法郎的，那種通常是進口混合蜜，風味扁平且偏死甜。</p>
         </div>
       </div>
       <div class="snack-item">
@@ -331,8 +339,9 @@ snacksCoopPanel.innerHTML = `
     <button class="guide-tag" onclick="document.getElementById('coopMeat').scrollIntoView({behavior:'smooth',block:'start'})">肉類與蛋白質</button>
     <button class="guide-tag" onclick="document.getElementById('coopCheese').scrollIntoView({behavior:'smooth',block:'start'})">起司指南</button>
     <button class="guide-tag" onclick="document.getElementById('coopBread').scrollIntoView({behavior:'smooth',block:'start'})">麵包指南</button>
-    <button class="guide-tag" onclick="document.getElementById('coopBrand').scrollIntoView({behavior:'smooth',block:'start'})">品牌認證</button>
     <button class="guide-tag" onclick="document.getElementById('coopSnack').scrollIntoView({behavior:'smooth',block:'start'})">零食指南</button>
+    <button class="guide-tag" onclick="document.getElementById('coopBrand').scrollIntoView({behavior:'smooth',block:'start'})">品牌認證</button>
+    
   </div>
   <h2 id="coopVeg">蔬菜指南</h2>
   <details class="brand-accordion">
@@ -581,29 +590,7 @@ snacksCoopPanel.innerHTML = `
     </div>
   </details>
 
-  <h2 id="coopBrand">品牌認證</h2>
-
-  <div class="brand-note-card">
-    <div class="brand-note-tag" style="background:#4A7C23;color:#fff;">Prix Garantie　黃底綠字</div>
-    <p>Coop 最便宜的抗通膨品牌，包裝極簡，價格常是其他牌子的一半，是預算有限時買基礎肉片、罐頭的省錢首選。</p>
-  </div>
-
-  <div class="brand-note-card">
-    <div class="brand-note-tag" style="background:#E04A1F;color:#fff;">Coop 自家品牌</div>
-    <p>超市標準自營品，價格與品質介於平價黃標和大品牌之間，品項最齊全，是買香腸、火腿等在地日常食品的穩當選擇。</p>
-  </div>
-
-  <div class="brand-note-card">
-    <div class="brand-note-tag" style="background:#2E5558;color:#fff;">Betty Bossi</div>
-    <p>Coop 的便利鮮食與半成品品牌。專攻「免洗、已切好、附醬汁」的即食沙拉與截切蔬果，單價較高，但最適合完全不生火的懶人。</p>
-  </div>
-
-  <div class="brand-note-card">
-    <div class="brand-note-tag" style="background:#80AB9E;color:#fff;">Karma</div>
-    <p>全素與植物性蔬食品牌，除了鷹嘴豆泥外，有許多調入咖哩或亞洲辛香料的食品，吃膩西式冷肉時換口味很實用。</p>
-  </div>
-
-  <h2 id="coopSnack">零食指南</h2>
+   <h2 id="coopSnack">零食指南</h2>
 
   <details class="brand-accordion">
     <summary><span class="brand-ac-title">Kambly Bretzeli <span class="brand-count">經典奶油薄餅</span></span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
@@ -652,6 +639,30 @@ snacksCoopPanel.innerHTML = `
       </div>
     </div>
   </details>
+
+  <h2 id="coopBrand">品牌認證</h2>
+
+  <div class="brand-note-card">
+    <div class="brand-note-tag" style="background:#4A7C23;color:#fff;">Prix Garantie　黃底綠字</div>
+    <p>Coop 最便宜的抗通膨品牌，包裝極簡，價格常是其他牌子的一半，是預算有限時買基礎肉片、罐頭的省錢首選。</p>
+  </div>
+
+  <div class="brand-note-card">
+    <div class="brand-note-tag" style="background:#E04A1F;color:#fff;">Coop 自家品牌</div>
+    <p>超市標準自營品，價格與品質介於平價黃標和大品牌之間，品項最齊全，是買香腸、火腿等在地日常食品的穩當選擇。</p>
+  </div>
+
+  <div class="brand-note-card">
+    <div class="brand-note-tag" style="background:#2E5558;color:#fff;">Betty Bossi</div>
+    <p>Coop 的便利鮮食與半成品品牌。專攻「免洗、已切好、附醬汁」的即食沙拉與截切蔬果，單價較高，但最適合完全不生火的懶人。</p>
+  </div>
+
+  <div class="brand-note-card">
+    <div class="brand-note-tag" style="background:#80AB9E;color:#fff;">Karma</div>
+    <p>全素與植物性蔬食品牌，除了鷹嘴豆泥外，有許多調入咖哩或亞洲辛香料的食品，吃膩西式冷肉時換口味很實用。</p>
+  </div>
+
+ 
 `;
 const snacksExperiencePanel = document.createElement('div');
 snacksExperiencePanel.id = 'snacksExperiencePanel';
@@ -789,15 +800,38 @@ snacksExperiencePanel.innerHTML = `
   </details>
 
   <p class="region-food-label" id="expBern">伯恩限定</p>
-
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">Bäckerei Glatz</span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/Berner-Mandelbärli.jpg" alt="Gelateria di Berna"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">Berner Mandelbärli</div>
+          <p>「伯恩杏仁熊蛋糕」（Berner Mandelbärli） 是瑞士首都伯恩（Bern）非常具代表性的傳統法式點心。因為伯恩的城市象徵和市徽就是「熊」，所以這款甜点被特別做成可愛的小熊造型，是當地最受歡迎的伴手禮之一。</p>
+        </div>
+      </div>
+    </div>
+  </details>
   <details class="brand-accordion">
     <summary><span class="brand-ac-title">Gelateria di Berna</span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
     <div class="brand-ac-body">
       <div class="snack-item">
         <div class="snack-item-img"><img src="images/Gelateria-Berna.jpg" alt="Gelateria di Berna"></div>
         <div class="snack-item-body">
-          <div class="snack-item-name">義式冰淇淋 Gelato</div>
-          <p>全伯恩最瘋狂的冰淇淋店。結合瑞士極高品質在地鮮乳與創新口味，推薦「大黃（Rhubarb）」、「生薑巧克力」或當季水果雪酪。</p>
+          <div class="snack-item-name">Gelateria di Berna</div>
+          <p>伯恩當之無愧的排隊冰淇淋之王。以超高性價比、大膽好玩的創意口味聞名。<br/>推薦口味： * 巧克力生薑（Schokolade-Ingwer）– 店內傳奇招牌，微辣的生薑完美中和巧克力的甜。鳳梨羅勒（Ananas-Basilikum）– 極致清爽的草本果香，夏日解膩必點。</p>
+        </div>
+      </div>
+    </div>
+  </details>
+  <details class="brand-accordion">
+    <summary><span class="brand-ac-title">La Golosa Gelato</span><span class="material-symbols-outlined brand-ac-icon">expand_more</span></summary>
+    <div class="brand-ac-body">
+      <div class="snack-item">
+        <div class="snack-item-img"><img src="images/La-Golosa-Gelato.avif" alt="Gelateria di Berna"></div>
+        <div class="snack-item-body">
+          <div class="snack-item-name">La Golosa Gelato</div>
+          <p>擁有義大利老靈魂的正宗傳統流派。主打 100% 天然、有機，口感極致綿密紮實。在老城區主街（靠近時鐘塔）就有分店，一邊逛拱廊噴泉一邊吃最順路。<br/>推薦口味： 開心果（Pistacchio）– 堅果香氣濃郁爆棚，乳化效果堪稱完美，堅果控靈魂伴侶。<br/>榛果（Nocciola）– 傳統工藝的極致體現，像在吃冰凍的頂級榛果醬。</p>
         </div>
       </div>
     </div>
