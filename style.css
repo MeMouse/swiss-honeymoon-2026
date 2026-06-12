@@ -225,6 +225,12 @@
     .snacks-panel { display: none; }
     .snacks-panel.active { display: block; animation: panelIn .22s ease; }
     .tab-btn.active[data-region="snacks"] { border-bottom-color: var(--gold); color: var(--gold); }
+    .snacks-container { display: none; }
+    .snacks-container.active { display: block; animation: panelIn .22s ease; }
+    .snacks-tab-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+    .snacks-sub-btn { padding: 7px 18px; border: 1.5px solid var(--border); border-radius: 99px; background: transparent; color: var(--muted); font-family: inherit; font-size: .9rem; font-weight: 600; cursor: pointer; transition: background .15s, color .15s, border-color .15s; line-height: 1; }
+    .snacks-sub-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .snacks-sub-btn.active { background: var(--gold); border-color: var(--gold); color: #fff; }
     .snack-sec-label { font-size: 2rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 20px 0 8px; }
     .snack-sec-label:first-child { margin-top: 2px; }
     .snack-item { display: flex; gap: 14px; background: var(--white); border-radius: 12px; padding: 14px; margin-bottom: 12px; box-shadow: var(--sh-sm); }

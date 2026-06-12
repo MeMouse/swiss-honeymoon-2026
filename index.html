@@ -929,19 +929,24 @@ snacksExperiencePanel.innerHTML = `
 `;
 const ALL_SNACKS_PANELS = [snacksSouvenirPanel, snacksCoopPanel, snacksExperiencePanel];
 
-function renderSnacksSubTabs() {
-  dayBar.innerHTML = '';
-  dayBar.hidden = false;
-  [{key:'souvenir',label:'伴手禮'},{key:'experience',label:'當地店家'},{key:'coop',label:'Coop救星'}].forEach(t => {
-    const b = document.createElement('button');
-    b.className = 'day-btn snacks-sub-btn' + (activeSnacksTab === t.key ? ' active' : '');
-    b.setAttribute('data-tab', t.key);
-    b.setAttribute('data-group', 'snacks');
-    b.textContent = t.label;
-    b.addEventListener('click', () => showSnacksTab(t.key));
-    dayBar.appendChild(b);
-  });
-}
+const snacksContainer = document.createElement('div');
+snacksContainer.id = 'snacksContainer';
+snacksContainer.className = 'snacks-container';
+const snacksTabRow = document.createElement('div');
+snacksTabRow.className = 'snacks-tab-row';
+[{key:'souvenir',label:'伴手禮'},{key:'experience',label:'當地店家'},{key:'coop',label:'Coop救星'}].forEach(t => {
+  const b = document.createElement('button');
+  b.className = 'snacks-sub-btn' + (activeSnacksTab === t.key ? ' active' : '');
+  b.setAttribute('data-tab', t.key);
+  b.textContent = t.label;
+  b.addEventListener('click', () => showSnacksTab(t.key));
+  snacksTabRow.appendChild(b);
+});
+snacksContainer.appendChild(snacksTabRow);
+snacksContainer.appendChild(snacksSouvenirPanel);
+snacksContainer.appendChild(snacksCoopPanel);
+snacksContainer.appendChild(snacksExperiencePanel);
+tabContent.appendChild(snacksContainer);
 
 function showSnacksTab(tab) {
   activeSnacksTab = tab;
@@ -951,10 +956,6 @@ function showSnacksTab(tab) {
   else snacksCoopPanel.classList.add('active');
   document.querySelectorAll('.snacks-sub-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-tab') === tab));
 }
-
-tabContent.appendChild(snacksSouvenirPanel);
-tabContent.appendChild(snacksCoopPanel);
-tabContent.appendChild(snacksExperiencePanel);
 
 const notesPanel = document.createElement('div');
 notesPanel.id = 'notesPanel';
@@ -1101,7 +1102,7 @@ snacksBtn.addEventListener('click', () => {
   dayBar.hidden = true;
   snacksBtn.classList.add('active');
   snacksBtn.setAttribute('aria-selected','true');
-  renderSnacksSubTabs();
+  snacksContainer.classList.add('active');
   showSnacksTab(activeSnacksTab);
   window.scrollTo({top: tabBar.offsetTop - 1, behavior:'smooth'});
 });
@@ -1115,6 +1116,7 @@ notesBtn.addEventListener('click', () => {
   hotelBtn.classList.remove('active');
   hotelBtn.setAttribute('aria-selected','false');
   ALL_SNACKS_PANELS.forEach(p => p.classList.remove('active'));
+  snacksContainer.classList.remove('active');
   snacksBtn.classList.remove('active');
   snacksBtn.setAttribute('aria-selected','false');
   dayBar.hidden = true;
@@ -1171,6 +1173,7 @@ hotelBtn.addEventListener('click', () => {
   notesBtn.classList.remove('active');
   notesBtn.setAttribute('aria-selected','false');
   ALL_SNACKS_PANELS.forEach(p => p.classList.remove('active'));
+  snacksContainer.classList.remove('active');
   snacksBtn.classList.remove('active');
   snacksBtn.setAttribute('aria-selected','false');
   dayBar.hidden = true;
@@ -1191,6 +1194,7 @@ function switchTab(idx) {
   hotelBtn.classList.remove('active');
   hotelBtn.setAttribute('aria-selected','false');
   ALL_SNACKS_PANELS.forEach(p => p.classList.remove('active'));
+  snacksContainer.classList.remove('active');
   snacksBtn.classList.remove('active');
   snacksBtn.setAttribute('aria-selected','false');
   document.querySelectorAll('.tab-panel').forEach((p, i) => p.classList.toggle('active', i === idx));
@@ -1223,9 +1227,9 @@ function goToSnacks(tab) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   hotelPanel.classList.remove('active');
   notesPanel.classList.remove('active');
-  renderSnacksSubTabs();
   snacksBtn.classList.add('active');
   snacksBtn.setAttribute('aria-selected','true');
+  snacksContainer.classList.add('active');
   showSnacksTab(tab);
   window.scrollTo({top: tabBar.offsetTop - 1, behavior:'smooth'});
 }
